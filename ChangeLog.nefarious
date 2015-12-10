@@ -1,0 +1,3802 @@
+/***********************************************************************
+ Nefarious IRCu ChangeLog
+
+2013-12-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Typo in features block list.
+
+2013-12-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added Features for IRCOPS command.
+
+	* doc/readme.features: Added Features for IRCOPS command.
+
+	* include/handlers.h: Added IRCOPS command.
+
+	* include/ircd_features.h: Added Features for IRCOPS command.
+
+	* include/msg.h: Added IRCOPS command.
+
+	* include/numeric.h: Added numeric replies for IRCOPS command.
+
+	* ircd/Makefile.in: Added IRCOPS command.
+
+	* ircd/ircd_features.c: Added Features for IRCOPS command.
+
+	* ircd/parse.c: Added IRCOPS command.
+
+	* ircd/s_err.c: Added numeric replies for IRCOPS command.
+
+	* ircd/m_ircops.c: Added IRCOPS command.
+
+2013-12-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Updated example.conf with the correct default
+	value for MAXBANS.
+
+2013-12-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_cap.c: Added a few changes to ensure cli_auth is set
+	before we call auth_cap_* functions.
+
+2013-12-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added a client flag to indicate a need to
+	call SSL_accept again.
+
+	* ircd/s_bsd.c: Added checks for the need SSL_accept client flag
+	to call SSL_accept.
+
+	* ircd/ssl.c: Rewrote and merged ssl_accept() and ssl_starttls().
+
+2013-12-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_bsd.c: Hopefully that'll fix Rubin's crash.
+
+2013-12-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_bsd.c: Attempt to fix STARTTLS connection issues.
+
+2013-12-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ssl.h: Added better handling for SSL_accept() errors.
+
+	* ircd/s_bsd.c: Added better handling for SSL_accept() errors.
+
+	* ircd/ssl.c: Added better handling for SSL_accept() errors.
+
+2013-12-03  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* configure: Re-ran autoconf.
+
+	* configure.in: Added a couple extra lines to fix OpenSSL detection.
+
+2013-12-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added class block restrict_* options.
+
+	* include/class.h: Added class block restrict_* options.
+
+	* include/client.h: Added class block restrict_* options.
+
+	* ircd/ircd_lexer.l: Added class block restrict_* options.
+
+	* ircd/ircd_parser.y: Added class block restrict_* options.
+
+	* ircd/ircd_relay.c: Added class block restrict_privmsg option.
+
+	* ircd/m_join.c: Added class block restrict_join option.
+
+	* ircd/m_mode.c: Added class block restrict_umode option.
+
+	* ircd/s_user.c: Added class block restrict_* options.
+
+2013-11-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_burst.c: Fix for bug where extended bans were not working
+	when added via BURST.
+
+2013-11-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_burst.c: Fixed crash bug when linking with Nefarious 1
+	when an invalid extended ban is present on a channel.
+
+2013-11-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added extended bans ~m and ~M for marks.
+
+	* doc/readme.features: Added extended bans ~m and ~M for marks.
+
+	* include/channel.h: Added extended bans ~m and ~M for marks.
+
+	* include/client.h: Renamed DNSBL_DATA to MARK.
+
+	* include/ircd_features.h: Added extended bans ~m and ~M for marks.
+
+	* include/mark.h: Renamed DNSBL_DATA to MARK.
+
+	* include/numeric.h: Renamed DNSBL_DATA to MARK.
+
+	* include/s_conf.h: Renamed DNSBL_DATA to MARK.
+
+	* ircd/channel.c: Added extended bans ~m and ~M for marks.
+
+	* ircd/ircd_features.c: Added extended bans ~m and ~M for marks.
+
+	* ircd/m_mark.c: Renamed DNSBL_DATA to MARK.
+
+	* ircd/m_whois.c: Renamed DNSBL_DATA to MARK.
+
+	* ircd/s_auth.c: Renamed DNSBL_DATA to MARK.
+
+	* ircd/s_conf.c: Renamed DNSBL_DATA to MARK.
+
+	* ircd/s_err.c: Renamed DNSBL_DATA to MARK.
+
+	* ircd/s_misc.c: Renamed DNSBL_DATA to MARK.
+
+	* ircd/s_serv.c: Renamed DNSBL_DATA to MARK.
+
+	* ircd/s_user.c: Renamed DNSBL_DATA to MARK.
+
+2013-11-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/channel.h: Removed the unnecesary prefix member of the
+	ExtBan struct.
+
+	* ircd/channel.c: Removed the unnecesary prefix member of the
+	ExtBan struct.
+
+	* ChangeLog.nefarious: Fixed incorrect date in previous commit.
+
+2013-11-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Changed SASL_TIMEOUT default value.
+
+	* doc/readme.features: Changed SASL_TIMEOUT default value.
+
+	* ircd/ircd_features.c: Changed SASL_TIMEOUT default value.
+
+2013-10-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_defs.h: Added #define for extended ban prefix.
+
+	* ircd/channel.c: Added #define for extended ban prefix.
+
+	* ircd/ircd_features.c: Added callback to update EXTBANS in RPL_ISUPPORT.
+
+2013-10-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/channel.h: Changed the way we handle extended ban controls.
+
+	* ircd/channel.c: Changed the way we handle extended ban controls.
+
+	* ircd/m_burst.c: Changed the way we handle extended ban controls.
+
+2013-10-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_EXTBAN_j_MAXPERCHAN feature.
+
+	* doc/readme.features: Added FEAT_EXTBAN_j_MAXPERCHAN feature.
+
+	* include/ircd_features.h: Added FEAT_EXTBAN_j_MAXPERCHAN feature.
+
+	* ircd/channel.c: Added FEAT_EXTBAN_j_MAXPERCHAN feature.
+
+	* ircd/ircd_features.c: Added FEAT_EXTBAN_j_MAXPERCHAN feature.
+
+2013-10-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Fixed a bug where FEAT_AUTOCHANMODES_LIST
+	ignored extended channel modes.
+
+2013-10-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added extended ban FEAT_*'s.
+
+	* doc/readme.features: Added extended ban FEAT_*'s.
+
+	* include/channel.h: Added extended ban types a, c, j, n, q and r.
+
+	* include/ircd_features.h: Added extended ban FEAT_*'s.
+
+	* ircd/channel.c: Added extended ban types a, c, j, n, q and r.
+
+	* ircd/ircd_features.c: Added extended ban FEAT_*'s.
+
+	* ircd/m_burst.c: Added extended ban types a, c, j, n, q and r.
+
+	* ircd/m_clearmode.c: Added extended ban types a, c, j, n, q and r.
+
+	* ircd/m_join.c: Added extended ban types a, c, j, n, q and r.
+
+	* ircd/s_user.c: Added extended ban types a, c, j, n, q and r.
+
+2013-10-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added Kill block mark and authexempt options.
+
+	* include/client.h: Added MARK_KILL.
+
+	* include/mark.h: Added MARK_KILL.
+
+	* include/numeric.h: Added RPL_WHOISKILL numeric reply.
+
+	* include/s_conf.h: Added Kill block mark and authexempt options.
+
+	* ircd/ircd_lexer.l: Added Kill block mark and authexempt options.
+
+	* ircd/ircd_parser.y: Added Kill block mark and authexempt options.
+
+	* ircd/m_check.c: Added MARK_KILL.
+
+	* ircd/m_mark.c: Added MARK_KILL.
+
+	* ircd/m_whois.c: Added MARK_KILL.
+
+	* ircd/s_auth.c: Added MARK_KILL.
+
+	* ircd/s_conf.c: Added Kill block mark and authexempt options.
+
+	* ircd/s_err.c: Added RPL_WHOISKILL numeric reply.
+
+	* ircd/s_serv.c: Added MARK_KILL.
+
+	* ircd/s_user.c: Added MARK_KILL.
+
+2013-10-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added user mode +L (no channel redirection).
+
+	* ircd/m_join.c: Added user mode +L (no channel redirection).
+
+	* ircd/s_user.c: Added user mode +L (no channel redirection).
+
+2013-10-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_features.c: Once again missed adding channel mode
+	+L to a channel modes list.
+
+2013-10-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CHMODE_L and FEAT_MAX_BOUNCE.
+
+	* doc/readme.features: Added FEAT_CHMODE_L and FEAT_MAX_BOUNCE.
+
+	* include/channel.h: Added channel mode +L (channel redirection).
+
+	* include/ircd_features.h: Added FEAT_CHMODE_L and FEAT_MAX_BOUNCE.
+
+	* include/numeric.h: Added ERR_LINKSET, ERR_LINKCHAN and ERR_LINKSELF.
+
+	* ircd/channel.c: Added channel mode +L (channel redirection).
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_L and FEAT_MAX_BOUNCE.
+
+	* ircd/m_join.c: Added channel mode +L (channel redirection).
+
+	* ircd/s_err.c: Added ERR_LINKSET, ERR_LINKCHAN and ERR_LINKSELF.
+
+	* ircd/s_user.c: Added channel mode +L (channel redirection).
+
+2013-10-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_bsd.c: A few minor changes to SSL connection handling.
+
+	* ircd/ssl.c: Fix for a crash when ssl_abort() is called again.
+
+2013-10-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Only apply FEAT_CHMODE_Z_STRICT to mode changes
+	sent by local clients.
+
+2013-10-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CHMODE_Z_STRICT feature.
+
+	* doc/readme.features: Added FEAT_CHMODE_Z_STRICT feature.
+
+	* include/channel.h: Added counter to count non-SSL users.
+
+	* include/ircd_features.h: Added FEAT_CHMODE_Z_STRICT feature.
+
+	* include/numeric.h: Added ERR_CANNOTCHANGECHANMODE numeric reply.
+
+	* ircd/channel.c: Added stricter +Z set handling when feature enabled.
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_Z_STRICT feature.
+
+	* ircd/m_join.c: Added stricter +Z handling when feature enabled.
+
+	* ircd/s_err.c: Added ERR_CANNOTCHANGECHANMODE numeric reply.
+
+2013-10-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* Ported ircu changes up to revision ac43a9ca643546041560c7386b7c34d28d57ee4e
+
+	* Files Modified: .hgignore ircd/.hgignore ircd/engine_devpoll.c
+	ircd/engine_epoll.c ircd/engine_kqueue.c ircd/ircd.c ircd/s_auth.c
+
+2013-10-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ssl.c: Removed struct definition for an unused structure.
+
+2013-10-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ssl.h: Added prototypes for ssl_accept() and ssl_abort().
+
+	* ircd/s_bsd.c: Moved SSL callback operations to
+	client_sock_callback().
+
+	* ircd/ssl.c: Rewrote incoming SSL connection handling.
+
+2013-10-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_cap.c: Fixed a few compiler warnings.
+
+	* ircd/m_remove.c: Fixed a few compiler warnings.
+
+	* ircd/m_server.c: Fixed a few compiler warnings.
+
+2013-10-20  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_NOMULTITARGETS feature.
+
+	* doc/readme.features: Added FEAT_NOMULTITARGETS feature.
+
+	* include/ircd_features.h: Added FEAT_NOMULTITARGETS feature.
+
+	* ircd/ircd_features.c: Added FEAT_NOMULTITARGETS feature.
+
+	* ircd/ircd_relay.c: Added FEAT_NOMULTITARGETS feature.
+
+2013-07-03  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* include/class.h: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* include/s_conf.h: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* ircd/Makefile.in: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* ircd/class.c: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* ircd/ircd_lexer.l: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* ircd/ircd_parser.y: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* ircd/m_oper.c: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* ircd/s_conf.c: Added auto join options to Class, Client and
+	Operator blocks.
+
+	* ircd/s_user.c: Added auto join options to Class, Client and
+	Operator blocks.
+
+2013-07-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ssl.c: Updated ssl_get_verify_result() to be more portable.
+
+2013-07-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_starttls.c: Forgot to make sure STARTTLS clients got
+	their client certificate fingerprint.
+
+	* ircd/s_bsd.c: Forgot to make sure STARTTLS clients got their
+	client certificate fingerprint.
+
+2013-07-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added some SSL client certificate verification
+	options.
+
+	* doc/readme.features: Added some SSL client certificate verification
+	options.
+
+	* include/ircd_features.h: Added some SSL client certificate verification
+	options.
+
+	* include/ssl.h: Added some SSL client certificate verification
+	options.
+
+	* ircd/ircd_features.c: Added some SSL client certificate verification
+	options.
+
+	* ircd/s_user.c: Added some SSL client certificate verification
+	options.
+
+	* ircd/ssl.c: Added some SSL client certificate verification
+	options.
+
+2013-06-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_conf.c: Forgot to free() a few ConfItem members.
+
+2013-06-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added a hidehostcomponants Client block option.
+
+	* include/client.h: Added a hidehostcomponants Client block option.
+
+	* include/ircd_cloaking.h: Added a hidehostcomponants Client block
+	option.
+
+	* include/s_conf.h: Added a hidehostcomponants Client block option.
+
+	* ircd/client.c: Added a hidehostcomponants Client block option.
+
+	* ircd/ircd_cloaking.c: Added a hidehostcomponants Client block option.
+
+	* ircd/ircd_lexer.l: Added a hidehostcomponants Client block option.
+
+	* ircd/ircd_parser.y: Added a hidehostcomponants Client block option.
+
+	* ircd/s_user.c: Added a hidehostcomponants Client block option.
+
+2013-06-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_cloaking.c: Changed the way IP addresses are cloaked.
+
+2013-06-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_SASL_TIMEOUT feature.
+
+	* doc/readme.features: Added FEAT_SASL_TIMEOUT feature.
+
+	* include/client.h: Added an SASL authentication timeout.
+
+	* include/ircd_features.h: Added FEAT_SASL_TIMEOUT feature.
+
+	* include/s_user.h: Added an SASL authentication timeout.
+
+	* ircd/Makefile.in: Added an SASL authentication timeout.
+
+	* ircd/ircd_features.c: Added FEAT_SASL_TIMEOUT feature.
+
+	* ircd/m_authenticate.c: Added an SASL authentication timeout
+	and support for initial SASL request broadcast to all servers.
+
+	* ircd/m_sasl.c: Added an SASL authentication timeout and
+	support for initial SASL request broadcast to all servers.
+
+	* ircd/s_auth.c: Added an SASL authentication timeout.
+
+	* ircd/s_misc.c: Added an SASL authentication timeout.
+
+	* ircd/s_user.c: Fixed a bug in (un)hide_hostmask().
+
+2013-06-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added Client block redirect option.
+
+	* include/numeric.h: Added RPL_BOUNCE numeric.
+
+	* include/s_conf.h: Added Client block redirect option.
+
+	* ircd/ircd_lexer.l: Added Client block redirect option.
+
+	* ircd/ircd_parser.y: Added Client block redirect option.
+
+	* ircd/s_conf.c: Added Client block redirect option.
+
+	* ircd/s_err.c: Added RPL_BOUNCE numeric.
+
+2013-06-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CAP_* features.
+
+	* doc/readme.features: Added FEAT_CAP_* features.
+
+	* include/capab.h: Added FEAT_CAP_* features.
+
+	* include/ircd_features.h: Added FEAT_CAP_* features.
+
+	* ircd/Makefile.in: Added FEAT_CAP_* features.
+
+	* ircd/ircd_features.c: Added FEAT_CAP_* features.
+
+	* ircd/m_cap.c: Added FEAT_CAP_* features.
+
+2013-06-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_HOST_HIDING_COMPONANTS feature.
+
+	* doc/readme.features: Added FEAT_HOST_HIDING_COMPONANTS feature.
+
+	* include/ircd_features.h: Added FEAT_HOST_HIDING_COMPONANTS feature.
+
+	* ircd/ircd_cloaking.c: Added FEAT_HOST_HIDING_COMPONANTS feature.
+
+	* ircd/ircd_features.c: Added FEAT_HOST_HIDING_COMPONANTS feature.
+
+2013-06-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added DNSBL_DATA mark.
+
+	* include/mark.h: Added DNSBL_DATA mark.
+
+	* include/numeric.h: Added DNSBL_DATA mark.
+
+	* include/s_conf.h: Added DNSBL_DATA mark.
+
+	* ircd/Makefile.in: Added DNSBL_DATA mark.
+
+	* ircd/m_mark.c: Added DNSBL_DATA mark.
+
+	* ircd/m_whois.c: Added DNSBL_DATA mark.
+
+	* ircd/s_auth.c: Added DNSBL_DATA mark.
+
+	* ircd/s_conf.c: Added DNSBL_DATA mark.
+
+	* ircd/s_err.c: Added DNSBL_DATA mark.
+
+	* ircd/s_misc.c: Added DNSBL_DATA mark.
+
+	* ircd/s_serv.c: Added DNSBL_DATA mark.
+
+	* ircd/s_user.c: Added DNSBL_DATA mark.
+
+2013-06-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_auth.c: Moved SASL completion code to s_auth.c
+
+	* ircd/s_user.c: Moved SASL completion code to s_auth.c
+
+2013-06-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_conf.c: Fixed memory leak when clearing denyConfList.
+
+2013-06-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_auth.c: A couple of minor changes missed when adding
+	ZLINE support.
+
+	* ircd/s_conf.c: A couple of minor changes missed when adding
+	ZLINE support.
+
+2013-06-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/shun.c: Missed a few instances of gl that should have been
+	changed to sh.
+
+2013-06-23  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Changed the behaviour of setting channel modes
+	+c or +S to remove the oposite in the same way as +p and +s.
+
+2013-06-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added a 'snomask' option to Operator blocks.
+
+	* include/s_conf.h: Added a 'snomask' option to Operator blocks.
+
+	* ircd/ircd_parser.y: Added a 'snomask' option to Operator blocks.
+
+	* ircd/m_oper.c: Added a 'snomask' option to Operator blocks.
+
+2013-06-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.shun: Added SHUN documentation.
+
+2013-06-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added ZLINE support.
+
+	* doc/readme.features: Added ZLINE support.
+
+	* include/client.h: Added ZLINE support.
+
+	* include/handlers.h: Added ZLINE support.
+
+	* include/ircd_features.h: Added ZLINE support.
+
+	* include/ircd_string.h: Added ZLINE support.
+
+	* include/msg.h: Added ZLINE support.
+
+	* include/numeric.h: Added ZLINE support.
+
+	* include/s_conf.h: Added ZLINE support.
+
+	* ircd/Makefile.in: Added ZLINE support.
+
+	* ircd/client.c: Added ZLINE support.
+
+	* ircd/ircd_features.c: Added ZLINE support.
+
+	* ircd/ircd_lexer.l: Added ZLINE support.
+
+	* ircd/ircd_parser.y: Added ZLINE support.
+
+	* ircd/ircd_string.c: Added ZLINE support.
+
+	* ircd/m_check.c: Added ZLINE support.
+
+	* ircd/m_remove.c: Added ZLINE support.
+
+	* ircd/parse.c: Added ZLINE support.
+
+	* ircd/s_bsd.c: Added ZLINE support.
+
+	* ircd/s_conf.c: Added ZLINE support.
+
+	* ircd/s_debug.c: Added ZLINE support.
+
+	* ircd/s_err.c: Added ZLINE support.
+
+	* ircd/s_serv.c: Added ZLINE support.
+
+	* ircd/s_stats.c: Added ZLINE support.
+
+	* doc/readme.zline: Added ZLINE support.
+
+	* include/zline.h: Added ZLINE support.
+
+	* ircd/m_zline.c: Added ZLINE support.
+
+	* ircd/zline.c: Added ZLINE support.
+
+2013-06-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Minor changes to the Class block privileges
+	listing.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/Makefile.in: Updated object file dependancy lists.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added WATCH support.
+
+	* doc/readme.features: Added WATCH support.
+
+	* include/handlers.h: Added WATCH support.
+
+	* include/hash.h: Added WATCH support.
+
+	* include/ircd_features.h: Added WATCH support.
+
+	* include/list.h: Added WATCH support.
+
+	* include/msg.h: Added WATCH support.
+
+	* include/numeric.h: Added WATCH support.
+
+	* include/struct.h: Added WATCH support.
+
+	* ircd/Makefile.in: Added WATCH support.
+
+	* ircd/hash.c: Added WATCH support.
+
+	* ircd/ircd_features.c: Added WATCH support.
+
+	* ircd/ircd_parser.y: Added WATCH support.
+
+	* ircd/parse.c: Added WATCH support.
+
+	* ircd/s_debug.c: Added WATCH support.
+
+	* ircd/s_err.c: Added WATCH support.
+
+	* ircd/s_misc.c: Added WATCH support.
+
+	* ircd/s_user.c: Added WATCH support.
+
+	* include/watch.h: Added WATCH support.
+
+	* ircd/m_watch.c: Added WATCH support.
+
+	* ircd/watch.c: Added WATCH support.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* patches/diffs/sline.diff: Removed.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added Spoofhost block option 'ismask'.
+
+	* include/s_conf.h: Added Spoofhost block option 'ismask'.
+
+	* ircd/ircd_lexer.l: Added Spoofhost block option 'ismask'.
+
+	* ircd/ircd_parser.y: Added Spoofhost block option 'ismask'.
+
+	* ircd/m_sethost.c: Added Spoofhost block option 'ismask'.
+
+	* ircd/s_conf.c: Added Spoofhost block option 'ismask'.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_LIST_PRIVATE_CHANNELS feature.
+
+	* doc/readme.features: Added FEAT_LIST_PRIVATE_CHANNELS feature.
+
+	* include/ircd_features.h: Added FEAT_LIST_PRIVATE_CHANNELS feature.
+
+	* ircd/hash.c: Added an option to include +p channels in LIST
+	replies as per RFC 1459.
+
+	* ircd/ircd_features.c: Added FEAT_LIST_PRIVATE_CHANNELS feature.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_account.c: Fix for bug where LOC causes incorrect host
+	hiding style 2 cloaked host to be stored for the user.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/hash.c: Added check to list channels you're invited to
+	even if +p/+s.
+
+	* ircd/m_list.c: Fixed bug in syntax for oper only check for
+	LIST flag S.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/hash.c: Added support to LIST for >= and <= operators.
+
+	* ircd/m_list.c: Added support to LIST for >= and <= operators.
+
+2013-06-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_LIST_SHOWMODES_OPERONLY feature.
+
+	* doc/readme.features: Added FEAT_LIST_SHOWMODES_OPERONLY feature.
+
+	* include/ircd_features.h: Added FEAT_LIST_SHOWMODES_OPERONLY
+	feature.
+
+	* ircd/ircd_features.c: Added FEAT_LIST_SHOWMODES_OPERONLY feature.
+
+	* ircd/m_list.c: Added FEAT_LIST_SHOWMODES_OPERONLY feature and
+	fixed crash on startup/rehash if DEFAULT_LIST_PARAM contained oper
+	only flags.
+
+2013-06-20  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ssl.c: Added a #define for IOV_MAX for systems that do not
+	have IOV_MAX defined already.
+
+2013-06-20  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_osdep.h: Fix for error setting IP_TOS on AF_INET6
+	sockets.
+
+	* ircd/listener.c: Fix for error setting IP_TOS on AF_INET6
+	sockets.
+
+	* ircd/os_generic.c: Fix for error setting IP_TOS on AF_INET6
+	sockets.
+
+	* ircd/s_bsd.c: Fix for error setting IP_TOS on AF_INET6
+	sockets.
+
+2013-06-20  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added PRIV_REMOVE for the REMOVE command.
+
+	* include/client.h: Added PRIV_REMOVE for the REMOVE command.
+
+	* include/gline.h: Added gline_remove() used by the REMOVE
+	command.
+
+	* include/handlers.h: Added the REMOVE command.
+
+	* include/msg.h: Added the REMOVE command.
+
+	* include/shun.h: Added shun_remove() used by the REMOVE
+	command.
+
+	* ircd/Makefile.in: Added the REMOVE command.
+
+	* ircd/client.c: Added PRIV_REMOVE for the REMOVE command.
+
+	* ircd/gline.c: Added gline_remove() used by the REMOVE command.
+
+	* ircd/ircd_lexer.l: Added PRIV_REMOVE for the REMOVE command.
+
+	* ircd/ircd_parser.y: Added PRIV_REMOVE for the REMOVE command.
+
+	* ircd/parse.c: Added the REMOVE command.
+
+	* ircd/s_err.c: Minor fix for STATS S.
+
+	* ircd/shun.c: Added shun_remove() used by the REMOVE command.
+
+	* ircd/m_remove.c: Added the REMOVE command.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Added a call to schedule_destruct_event_1m()
+	when an empty channel is set -z.
+
+	* ircd/m_check.c: Fixed allignment of channel info.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_authenticate.c: Added ':' prefix to SSL fingerprint.
+
+	* ircd/m_sasl.c: Forgot to account for SSL fingerprint in SASL
+	message.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_authenticate.c: Added SSL client certificate fingerprint
+	to initial SASL message sent to services regardless of method.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added 'noidenttilde' Client block option.
+
+	* include/s_conf.h: Added 'noidenttilde' Client block option.
+
+	* ircd/ircd_lexer.l: Added 'noidenttilde' Client block option.
+
+	* ircd/ircd_parser.y: Added 'noidenttilde' Client block option.
+
+	* ircd/s_conf.c: Added 'noidenttilde' Client block option.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_NETWORK_REHASH and PRIV_REMOTEREHASH.
+
+	* doc/readme.features: Added FEAT_NETWORK_REHASH feature.
+
+	* include/client.h: Added PRIV_REMOTEREHASH privilege.
+
+	* include/handlers.h: Added REHASH server handler.
+
+	* include/ircd_features.h: Added FEAT_NETWORK_REHASH feature.
+
+	* include/msg.h: Added REHASH server handler.
+
+	* ircd/client.c: Added PRIV_REMOTEREHASH privilege.
+
+	* ircd/ircd_features.c: Added FEAT_NETWORK_REHASH feature.
+
+	* ircd/ircd_lexer.l: Added PRIV_REMOTEREHASH privilege.
+
+	* ircd/ircd_parser.y: Added PRIV_REMOTEREHASH privilege.
+
+	* ircd/m_rehash.c: Added remote REHASH support.
+
+	* ircd/parse.c: Added REHASH server handler.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/s_auth.h: Added auth_restart() function.
+
+	* ircd/m_rehash.c: Added REHASH type 'a' to restart IAuth.
+
+	* ircd/s_auth.c: Added auth_restart() function.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_HALFOP_DEHALFOP_SELF feature.
+
+	* doc/readme.features: Added FEAT_HALFOP_DEHALFOP_SELF feature.
+
+	* include/ircd_features.h: Added FEAT_HALFOP_DEHALFOP_SELF feature.
+
+	* ircd/channel.c: Added FEAT_HALFOP_DEHALFOP_SELF feature.
+
+	* ircd/ircd_features.c: Added FEAT_HALFOP_DEHALFOP_SELF feature.
+
+2013-06-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Minor change to : handling in mode_parse_client().
+
+2013-06-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_pass.c: Updated mr_pass to not overwrite the password
+	if one has already been set.
+
+2013-06-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_LOC_TIMEOUT feature.
+
+	* doc/readme.features: Added FEAT_LOC_TIMEOUT feature.
+
+	* include/ircd_features.h: Added FEAT_LOC_TIMEOUT feature.
+
+	* include/s_auth.h: Added a an extra function to cancel LOC timeout.
+
+	* ircd/ircd_features.c: Added FEAT_LOC_TIMEOUT feature.
+
+	* ircd/m_account.c: Moved LOC code from register_user() to s_auth.c
+
+	* ircd/m_pass.c: Moved LOC code from register_user() to s_auth.c
+
+	* ircd/s_auth.c: Moved LOC code from register_user() to s_auth.c
+
+	* ircd/s_user.c: Moved LOC code from register_user() to s_auth.c
+
+2013-06-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Added check to ensure halfops can set channel bans.
+
+2013-06-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/whocmds.c: Added 'z' flag to the flags field in the WHO
+	command output to indicate SSL users.
+
+2013-06-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CHMODE_e_CHMODEEXCEPTION option.
+
+	* doc/readme.features: Added FEAT_CHMODE_e_CHMODEEXCEPTION option.
+
+	* include/ircd_features.h: Added FEAT_CHMODE_e_CHMODEEXCEPTION option.
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_e_CHMODEEXCEPTION option.
+
+	* ircd/m_join.c: Added FEAT_CHMODE_e_CHMODEEXCEPTION option and
+	rearranged join restricton checks to ensure +z (SSL only) always
+	applies.
+
+2013-06-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_parser.y: Changed WebIRC block to allow more then one
+	host mask per WebIRC block.
+
+2013-06-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.iauth: Added iauth account notification.
+
+	* include/s_auth.h: Added iauth account notification.
+
+	* ircd/m_sasl.c: Added iauth account notification.
+
+	* ircd/s_auth.c: Added iauth account notification.
+
+2013-06-10  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_ALLOW_OPLEVEL_CHANGE feature.
+
+	* doc/readme.features: Added FEAT_ALLOW_OPLEVEL_CHANGE feature.
+
+	* include/ircd_features.h: Added FEAT_ALLOW_OPLEVEL_CHANGE feature.
+
+	* ircd/channel.c: Added an option to allow +o to change a users
+	oplevel even if they are already opped.
+
+	* ircd/ircd_features.c: Added FEAT_ALLOW_OPLEVEL_CHANGE feature.
+
+2013-06-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_LISTDELAY.
+
+	* doc/readme.features: Added FEAT_LISTDELAY.
+
+	* include/ircd_features.h: Added FEAT_LISTDELAY.
+
+	* include/s_conf.h: Added listdelay to the Except block.
+
+	* ircd/ircd_features.c: Added FEAT_LISTDELAY.
+
+	* ircd/ircd_lexer.l: Added listdelay to the Except block.
+
+	* ircd/ircd_parser.y: Added listdelay to the Except block.
+
+	* ircd/m_list.c: Added list delay and associated exception.
+
+	* ircd/s_err.c: Added listdelay to the Except block.
+
+	* ircd/s_stats.c: Added listdelay to the Except block.
+
+2013-06-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_SASL_SERVER feature.
+
+	* doc/readme.features: Added FEAT_SASL_SERVER feature.
+
+	* include/capab.h: Added sasl client capability.
+
+	* include/client.h: Added SASL state storage.
+
+	* include/handlers.h: Added SASL and AUTHENTICATE commands.
+
+	* include/ircd_features.h: Added FEAT_SASL_SERVER feature.
+
+	* include/msg.h: Added SASL and AUTHENTICATE commands.
+
+	* include/numeric.h: Added SASL numeric replies.
+
+	* include/s_user.h: Added SASL support.
+
+	* ircd/Makefile.in: Added SASL and AUTHENTICATE commands.
+
+	* ircd/ircd_features.c: Added FEAT_SASL_SERVER feature.
+
+	* ircd/m_cap.c: Added sasl client capability.
+
+	* ircd/parse.c: Added SASL and AUTHENTICATE commands.
+
+	* ircd/s_err.c: Added SASL numeric replies.
+
+	* ircd/s_misc.c: Added SASL support.
+
+	* ircd/s_user.c: Added SASL support.
+
+	* ircd/m_authenticate.c: Added SASL and AUTHENTICATE commands.
+
+	* ircd/m_sasl.c: Added SASL and AUTHENTICATE commands.
+
+2013-06-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_cap.c: Fixed a bug where a trailing space would cause
+	a CAP NAK response when it should be a CAP ACK.
+
+2013-06-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_cap.c: Fixed CAP support to use the correct syntax in
+	CAP replies.
+
+2013-06-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added the Except block and FEAT_HIS_STATS_E.
+
+	* doc/readme.features: Added FEAT_HIS_STATS_E.
+
+	* include/client.h: Added client flags as part of IPCheck
+	exemption.
+
+	* include/ircd_features.h: Added FEAT_HIS_STATS_E.
+
+	* include/numeric.h: Added the RPL_STATSELINE numeric reply.
+
+	* include/s_conf.h: Added the Except block.
+
+	* ircd/gline.c: Added exception lookups for glines.
+
+	* ircd/ircd_features.c: Added FEAT_HIS_STATS_E.
+
+	* ircd/ircd_lexer.l: Added the Except block.
+
+	* ircd/ircd_parser.y: Added the Except block.
+
+	* ircd/m_check.c: Added list of exemptions applied to the user.
+
+	* ircd/m_nick.c: Added exception lookups for IPchecks.
+
+	* ircd/m_webirc.c: Added exception lookups for IPchecks.
+
+	* ircd/s_auth.c: Added exception lookups for IPchecks, ident
+	and rdns lookups.
+
+	* ircd/s_bsd.c: Added exception lookups for IPchecks.
+
+	* ircd/s_conf.c: Added the Except block.
+
+	* ircd/s_err.c: Added the RPL_STATSELINE numeric reply.
+
+	* ircd/s_misc.c: Added exception lookups for IPchecks.
+
+	* ircd/s_stats.c: Added STATS E for listing Except blocks.
+
+	* ircd/s_user.c: Added exception lookups for IPchecks and
+	target limiting.
+
+	* ircd/shun.c: Added exception lookups for shuns.
+
+	* ircd/ssl.c: Fixed a commont.
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/capab.h: Added client_check_caps() function.
+
+	* ircd/m_cap.c: Added client_check_caps() function.
+
+	* ircd/m_check.c: Added client capabilities to CHECK output.
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/Makefile.in: Run tools/makepem/makepem after make install.
+
+	* ircd/m_starttls.c: Fixed warnign only shown without SSL.
+
+	* ircd/s_bsd.c: Fixed bugs caused by compiling withous SSL.
+
+	* tools/makepem/makepem: Added a tool to generate SSL server
+	certificates.
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.iauth: Added SSL client certificate notifcation
+	extension to the iauth protocol.
+
+	* ircd/s_auth.c: Added SSL client certificate notifcation
+	extension to the iauth protocol.
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/capab.h: Added account-notify client capability.
+
+	* ircd/m_account.c: Added account-notify client capability.
+
+	* ircd/m_cap.c: Added account-notify client capability.
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Fixed a bug caused by wrong parameter order.
+
+	* ircd/s_user.c: Fixed a bug caused by wrong parameter order.
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/capab.h: Added away-notify client capability.
+
+	* include/send.h: Added sendcmdto_common_channels_capab_butone().
+
+	* ircd/channel.c: Added away-notify client capability.
+
+	* ircd/m_away.c: Added away-notify client capability.
+
+	* ircd/m_burst.c: Added away-notify client capability.
+
+	* ircd/m_cap.c: Added away-notify client capability.
+
+	* ircd/s_user.c: Added away-notify client capability.
+
+	* ircd/send.c: Added sendcmdto_common_channels_capab_butone().
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/capab.h: Added extended-join client capability.
+
+	* include/send.h: Added sendcmdto_channel_capab_butserv_butone().
+
+	* ircd/channel.c: Added extended-join client capability.
+
+	* ircd/m_burst.c: Added extended-join client capability.
+
+	* ircd/m_cap.c: Added extended-join client capability.
+
+	* ircd/s_user.c: Added extended-join client capability.
+
+	* ircd/send.c: Added sendcmdto_channel_capab_butserv_butone().
+
+2013-06-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/parse.c: Changed user and oper handlers from m_ignore to
+	m_registered for STARTTLS.
+
+2013-06-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_features.c: Changed the way CHANMODES is generated.
+
+	* ircd/s_user.c: Changed the way CHANMODES is generated.
+
+2013-05-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added channel mode +e FEAT_*s.
+
+	* doc/readme.features: Added channel mode +e FEAT_*s.
+
+	* include/channel.h: Added channel mode +e (ban exceptions).
+
+	* include/ircd_features.h: Added channel mode +e FEAT_*s.
+
+	* include/numeric.h: Added channel mode +e (ban exceptions).
+
+	* include/supported.h: Cleaned out this file, we don't use the
+	#defines within it.
+
+	* ircd/channel.c: Added channel mode +e (ban exceptions).
+
+	* ircd/ircd_features.c: Added channel mode +e FEAT_*s.
+
+	* ircd/m_burst.c: Added channel mode +e (ban exceptions).
+
+	* ircd/m_check.c: Added channel mode +e (ban exceptions).
+
+	* ircd/m_clearmode.c: Added channel mode +e (ban exceptions).
+
+	* ircd/m_destruct.c: Added channel mode +e (ban exceptions).
+
+	* ircd/m_join.c: Added channel mode +e (ban exceptions).
+
+	* ircd/s_err.c: Added channel mode +e (ban exceptions).
+
+	* ircd/s_user.c: Added channel mode +e (ban exceptions).
+
+2013-05-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_auth.c: Fixed FEAT_STRICTUSERNAME to always work.
+
+2013-05-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added CHMODE_c and CHMODE_S features.
+
+	* doc/readme.features: Added CHMODE_c and CHMODE_S features.
+
+	* include/channel.h: Added channel modes +c and +S.
+
+	* include/ircd_features.h: Added FEAT_CHMODE_c and FEAT_CHMODE_S.
+
+	* include/ircd_string.h: Added StripColor() and HasColor() functions.
+
+	* include/supported.h: Added channel modes +c and +S.
+
+	* ircd/channel.c: Added channel modes +c and +S.
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_c and FEAT_CHMODE_S.
+
+	* ircd/ircd_relay.c: Added channel modes +c and +S.
+
+	* ircd/ircd_string.c: Added StripColor() function.
+
+	* ircd/m_clearmode.c: Added channel modes +c and +S.
+
+	* ircd/m_part.c: Added channel modes +c and +S.
+
+	* ircd/m_quit.c: Added channel modes +c and +S.
+
+	* ircd/m_topic.c: Added channel modes +c and +S.
+
+	* ircd/s_user.c: Added channel modes +c and +S.
+
+2013-05-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added snomask Class block option.
+
+	* doc/snomask.txt: Fixed default server notice mask lists.
+
+	* include/class.h: Added snomask Class block option.
+
+	* ircd/ircd_lexer.l: Added snomask Class block option.
+
+	* ircd/ircd_parser.y: Added snomask Class block option.
+
+	* ircd/m_oper.c: Added snomask Class block option.
+
+2013-05-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/snomask.txt: Added a text only version of snomask.html.
+
+2013-05-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Changed cli_webircip/cli_webirchost to
+	cli_connectip/cli_connecthost.
+
+	* ircd/m_check.c: Changed cli_webircip/cli_webirchost to
+	cli_connectip/cli_connecthost.
+
+	* ircd/m_webirc.c: Changed cli_webircip/cli_webirchost to
+	cli_connectip/cli_connecthost.
+
+	* ircd/s_auth.c: Changed cli_webircip/cli_webirchost to
+	cli_connectip/cli_connecthost.
+
+2013-05-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/numnicks.c: Added support for converting teredo tunneled
+	IPv6 addresses to their IPv4 NAT IP address for linking to servers
+	without IPv6.
+
+2013-05-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_debug.c: Forgot to add flag Z to debug_serveropts().
+
+2013-05-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/msg.h: Changed TOK_PRIVS to "PRIVS" to match Nefarious 1.
+
+2013-05-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Forgot to add FEAT_CHMODE_Q documentation.
+
+	* doc/readme.features: Forgot to add FEAT_CHMODE_Q documentation.
+
+2013-05-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_mark.c: Fixed crash bug caused by parc being too low.
+
+2013-05-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CHMODE_T for channel mode +T.
+
+	* doc/readme.features: Added FEAT_CHMODE_T for channel mode +T.
+
+	* include/channel.h: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* include/ircd_features.h: Added FEAT_CHMODE_T for channel mode +T.
+
+	* include/ircd_relay.h: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* include/supported.h: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* ircd/channel.c: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_T for channel mode +T.
+
+	* ircd/ircd_relay.c: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* ircd/m_clearmode.c: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* ircd/m_notice.c: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* ircd/m_privmsg.c: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+	* ircd/s_user.c: Added channel mode +T to block messages to
+	channels when that channel is part of a multiple target list.
+
+2013-05-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_notice.c: Missed a call to m_wallhops in m_notice and mo_notice.
+
+2013-05-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CHMODE_C for channel mode +C.
+
+	* doc/readme.features: Added FEAT_CHMODE_C for channel mode +C.
+
+	* include/channel.h: Added channel mode +C (No CTCP messages).
+
+	* include/ircd_features.h: Added FEAT_CHMODE_C for channel mode +C.
+
+	* include/supported.h: Added channel mode +C (No CTCP messages).
+
+	* ircd/channel.c: Added channel mode +C (No CTCP messages).
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_C for channel mode +C.
+
+	* ircd/ircd_relay.c: Added channel mode +C (No CTCP messages).
+
+	* ircd/m_clearmode.c: Added channel mode +C (No CTCP messages).
+
+	* ircd/s_user.c: Added channel mode +C (No CTCP messages).
+
+2013-05-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added WALLHOPS command.
+
+	* include/msg.h: Added WALLHOPS command.
+
+	* include/supported.h: Added WALLHOPS to RPL_ISUPPORT.
+
+	* ircd/Makefile.in: Added WALLHOPS command.
+
+	* ircd/m_notice.c: Added missing support for % STATUSMSG feature.
+
+	* ircd/parse.c: Added WALLHOPS command.
+
+	* ircd/s_user.c: Added WALLHOPS to RPL_ISUPPORT.
+
+	* ircd/send.c: Added support for WALLHOPS command.
+
+	* ircd/m_wallhops.c: Added WALLHOPS command.
+
+2013-05-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* Multiple files: Added halfop support.
+
+	* Files: Makefile.in, doc/example.conf, doc/readme.features,
+	include/channel.h, include/ircd_features.h, include/numeric.h,
+	include/send.h, include/supported.h, ircd/channel.c,
+	ircd/ircd_features.c, ircd/m_burst.c, ircd/m_check.c, ircd/m_clearmode.c,
+	ircd/m_invite.c, ircd/m_kick.c, ircd/m_mode.c, ircd/m_names.c,
+	ircd/m_topic.c, ircd/m_whois.c, ircd/s_err.c, ircd/s_user.c, ircd/send.c,
+	ircd/whocmds.c
+
+2013-05-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Fixed a crash bug that was getting optimized
+	out at compile time by -O2.
+
+	* ircd/motd.c: Fixed a compile warning.
+
+2013-05-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/channel.h: Added channel mode +Q (strip PART/QUIT messages).
+
+	* include/ircd_features.h: Added channel mode +Q (strip PART/QUIT
+	messages).
+
+	* include/supported.h: Added channel mode +Q (strip PART/QUIT messages).
+
+	* ircd/channel.c: Added channel mode +Q (strip PART/QUIT messages).
+
+	* ircd/ircd_features.c: Added channel mode +Q (strip PART/QUIT messages).
+
+	* ircd/m_clearmode.c: Added channel mode +Q (strip PART/QUIT messages).
+
+	* ircd/m_part.c: Added channel mode +Q (strip PART/QUIT messages).
+
+	* ircd/m_quit.c: Added channel mode +Q (strip PART/QUIT messages).
+
+	* ircd/s_user.c: Added channel mode +Q (strip PART/QUIT messages).
+
+2013-05-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* .hgignore: Added include/patchlist.h to be ignored.
+
+2013-05-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.iauth: Added MARK support to iauth.
+
+	* ircd/s_auth.c: Added MARK support to iauth.
+
+	* ircd/s_user.c: Ensured MARK_CVERSION is properly propagated
+	in register_user();
+
+2013-05-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* include/numeric.h: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* include/s_conf.h: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* ircd/ircd_lexer.l: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* ircd/ircd_parser.y: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* ircd/m_oper.c: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* ircd/m_server.c: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* ircd/s_auth.c: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* ircd/s_conf.c: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+	* ircd/s_err.c: Added SSL client certificate support to
+	Client, Connect and Operator blocks.
+
+2013-05-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_SENDSSLFP.
+
+	* doc/readme.features: Added FEAT_SENDSSLFP.
+
+	* include/ircd_features.h: Added SSL client certificate fingerprint support
+	to login on connect.
+
+	* ircd/ircd_features.c: Added FEAT_SENDSSLFP.
+
+	* ircd/m_account.c: Added SSL client certificate fingerprint support
+	to login on connect.
+
+	* ircd/s_user.c: Added SSL client certificate fingerprint support
+	to login on connect.
+
+2013-05-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/capab.h: Added tls CAP.
+
+	* include/client.h: Added STARTTLS support.
+
+	* include/handlers.h: Added STARTTLS support.
+
+	* include/msg.h: Added STARTTLS support.
+
+	* include/numeric.h: Added STARTTLS support.
+
+	* include/ssl.h: Added STARTTLS support.
+
+	* ircd/Makefile.in: Added STARTTLS support.
+
+	* ircd/m_cap.c: Added tls CAP.
+
+	* ircd/parse.c: Added STARTTLS support.
+
+	* ircd/s_bsd.c: Added STARTTLS support.
+
+	* ircd/s_err.c: Added STARTTLS support.
+
+	* ircd/ssl.c: Added STARTTLS support.
+
+	* ircd/m_starttls.c: Added STARTTLS support.
+
+2013-05-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_features.c: Missed a channel mode string for channel
+	mode +Z.
+
+2013-05-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Fixed -Wall -pedantic compiler warnings.
+
+	* ircd/ssl.c: Fixed -Wall -pedantic compiler warnings.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ssl.c: Set SSL connections to non-blocking.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/mark.h: Added MARK_SSLCLIFP to propagate SSL client
+	certificate fingerprint.
+
+	* ircd/m_mark.c: Added MARK_SSLCLIFP to propagate SSL client
+	certificate fingerprint.
+
+	* ircd/s_serv.c: Added MARK_SSLCLIFP to propagate SSL client
+	certificate fingerprint.
+
+	* ircd/s_user.c: Added MARK_SSLCLIFP to propagate SSL client
+	certificate fingerprint.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added stripsslfp WebIRC block option.
+
+	* include/s_conf.h: Added stripsslfp WebIRC block option.
+
+	* ircd/ircd_lexer.l: Added stripsslfp WebIRC block option.
+
+	* ircd/ircd_parser.y: Added stripsslfp WebIRC block option.
+
+	* ircd/m_webirc.c: Added stripsslfp WebIRC block option.
+
+	* ircd/s_err.c: Added stripsslfp WebIRC block option.
+
+	* ircd/s_stats.c: Added stripsslfp WebIRC block option.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added FINGERPRINT command.
+
+	* include/msg.h: Added FINGERPRINT command.
+
+	* include/numeric.h: Added RPL_SSLFP and ERR_NOSSLFP numerics.
+
+	* ircd/Makefile.in: Added FINGERPRINT command.
+
+	* ircd/parse.c: Added FINGERPRINT command.
+
+	* ircd/s_err.c: Added RPL_SSLFP and ERR_NOSSLFP numerics.
+
+	* ircd/m_fingerprint.c: Added FINGERPRINT command.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/numeric.h: Added RPL_WHOISSSLFP.
+
+	* ircd/m_whois.c: Added RPL_WHOISSSLFP.
+
+	* ircd/s_err.c: Added RPL_WHOISSSLFP.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added SSL client certificate fingerprint.
+
+	* include/ssl.h: Added SSL client certificate fingerprint.
+
+	* ircd/m_check.c: Added SSL client certificate fingerprint.
+
+	* ircd/s_bsd.c: Added SSL client certificate fingerprint.
+
+	* ircd/ssl.c: Added SSL client certificate fingerprint.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CHMODE_Z.
+
+	* doc/readme.features: Added FEAT_CHMODE_Z.
+
+	* include/channel.h: Added channel mode +Z (SSL only).
+
+	* include/ircd_features.h: Added FEAT_CHMODE_Z.
+
+	* include/numeric.h: Added ERR_SSLONLYCHAN for channel mode +Z.
+
+	* include/supported.h: Added channel mode +Z (SSL only).
+
+	* ircd/channel.c: Added channel mode +Z (SSL only).
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_Z.
+
+	* ircd/m_burst.c: Added channel mode +Z (SSL only).
+
+	* ircd/m_clearmode.c: Added channel mode +Z (SSL only).
+
+	* ircd/m_join.c: Added channel mode +Z (SSL only).
+
+	* ircd/s_err.c: Added ERR_SSLONLYCHAN for channel mode +Z.
+
+	* ircd/s_user.c: Added channel mode +Z (SSL only).
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed bug where +z was being treated as +zr.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Forgot to add user mode +z to infousermodes.
+
+2013-05-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* many files: Added basic accept and connect SSL support.
+
+	* files: config.h.in, configure, configure.in, doc/example.conf,
+	doc/readme.features, include/client.h, include/ircd_events.h,
+	include/ircd_features.h, include/listener.h, include/numeric.h,
+	include/s_bsd.h, include/s_conf.h, ircd/Makefile.in, ircd/ircd.c,
+	ircd/ircd_features.c, ircd/ircd_lexer.l, ircd/ircd_parser.y,
+	ircd/listener.c, ircd/m_rehash.c, ircd/m_version.c, ircd/m_whois.c,
+	ircd/s_auth.c, ircd/s_bsd.c, ircd/s_err.c, ircd/s_user.c,
+	include/ssl.h, ircd/ssl.c
+
+2013-05-20  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/listener.c: Added listener bind IP to STATS p
+
+	* ircd/s_err.c: Added listener bind IP to STATS p
+
+2013-05-14  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.iauth: Added documentation for Nefarious WEBIRC iauth
+	extensions.
+
+	* include/s_auth.h: Added Nefarious WEBIRC iauth extensions.
+
+	* ircd/m_webirc.c: Fix for bug caused by porting an ircu change, and
+	added Nefarious WEBIRC iauth extensions.
+
+	* ircd/s_auth.c: Added Nefarious WEBIRC iauth extensions.
+
+2012-12-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* Ported ircu changes up to revision 894ccd3b8d5acb0067562d26bf72228d3e617203
+
+2012-12-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* */.cvsignore: Ported ircu revision 9a5a983eb43fc918ad5835622afa382817b3ecc5 
+
+2012-11-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/whocmds.c: Forgot to add support for the multi-prefix CAP in
+	the WHO command output.
+
+2012-10-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_create.c: Fix for users joining an empty +z channel getting
+	opped.
+
+	* ircd/m_svsjoin.c: Fix for users joining an empty +z channel getting
+	opped.
+
+2012-10-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_join.c: Fix for users joining an empty +z channel getting
+	opped.
+
+2012-10-02  Matthew Beeching  <jobe@mdbnetco.uk>
+
+	 include/channel.h: Added channel mode +z (persistant channels.)
+
+	 include/supported.h: Added channel mode +z (persistant channels.)
+
+	 ircd/channel.c: Added channel mode +z (persistant channels.)
+
+	 ircd/s_user.c: Added channel mode +z (persistant channels.)
+
+2012-10-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_features.c: Forgot to update a channel modes list.
+
+2012-10-02  Matthew beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Forgot to clear extended channel modes in
+	sub1_from_channel().
+
+2012-10-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/channel.h: Minor reordering or channel mode lists.
+
+	* include/supported.h: Minor reordering or channel mode lists.
+
+	* ircd/s_user.c: Minor reordering or channel mode lists.
+
+2012-10-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added F:CHMODE_N
+
+	* doc/readme.features: Added F:CHMODE_N
+
+	* include/channel.h: Added channel mode +N (No NOTICEs)
+
+	* include/ircd_features.h: Added F:CHMODE_N
+
+	* include/supported.h: Added channel mode +N (No NOTICEs)
+
+	* ircd/channel.c: Added channel mode +N (No NOTICEs)
+
+	* ircd/ircd_features.c: Added F:CHMODE_N
+
+	* ircd/ircd_relay.c: Added channel mode +N (No NOTICEs)
+
+	* ircd/m_clearmode.c: Added channel mode +N (No NOTICEs)
+
+	* ircd/s_user.c: Added channel mode +N (No NOTICEs)
+
+2012-10-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_clearmode.c: Forgot to add channel mode +M to CLEARMODE.
+
+2012-10-01  Matthew beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Forgot to add checks to stop non admins speaking
+	in +a channels and non IRCops speaking in +O channels.
+
+2012-10-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added F:CHMODE_M
+
+	* doc/readme.features: Added F:CHMODE_M
+
+	* include/channel.h: Added channel mode +M
+
+	* include/ircd_features.h: Added F:CHMODE_M
+
+	* include/supported.h: Added channel mode +M
+
+	* ircd/channel.c: Added channel mode +M
+
+	* ircd/ircd_features.c: Added F:CHMODE_M
+
+	* ircd/s_user.c: Added channel mode +M
+
+2012-09-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Corrected the spelling of FLEXIBLEKEYS
+
+	* doc/readme.features: Corrected the spelling of FLEXIBLEKEYS
+
+	* include/ircd_features.h: Corrected the spelling of FLEXIBLEKEYS
+
+	* ircd/ircd_features.c: Corrected the spelling of FLEXIBLEKEYS
+
+	* ircd/m_join.c: Corrected the spelling of FLEXIBLEKEYS
+
+2012-09-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Swapped GeoIP data and Real Name around in
+	CHECK output
+
+2012-09-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added F:FLEXABLEKEYS
+
+	* doc/readme.features: Added F:FLEXABLEKEYS
+
+	* include/ircd_features.h: Added F:FLEXABLEKEYS
+
+	* ircd/ircd_features.c: Added F:FLEXABLEKEYS
+
+	* ircd/m_join.c: Added F:FLEXABLEKEYS
+
+2012-09-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added FEAT_CHMODE_a and FEAT_CHMODE_O
+
+	* doc/readme.features: Added FEAT_CHMODE_a and FEAT_CHMODE_O
+
+	* include/channel.h: Modified struct Mode and struct ModeBuf
+
+	* include/ircd_features.h: Added FEAT_CHMODE_a and FEAT_CHMODE_O
+
+	* include/numeric.h: Added ERR_ADMINONLYCHAN and ERR_OPERONLYCHAN
+
+	* include/supported.h: Added channel modes +a and +O
+
+	* ircd/channel.c: Added channel modes +a and +O and expanded channel
+	mode flags system
+
+	* ircd/ircd_features.c: Added FEAT_CHMODE_a and FEAT_CHMODE_O
+
+	* ircd/m_burst.c: Added channel modes +a and +O
+
+	* ircd/m_clearmode.c: Added channel modes +a and +O
+
+	* ircd/m_join.c: Added channel modes +a and +O
+
+	* ircd/s_err.c: Added ERR_ADMINONLYCHAN and ERR_OPERONLYCHAN
+
+	* ircd/s_user.c: Added channel modes +a and +O
+
+2012-05-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Fixed invalid default value for DEFAULT_LIST_PARAM
+	Feature.
+
+2012-05-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/opercmds.c: Fixed a couple more -Wall -pedantic compiler
+	warnings.
+
+2012-05-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* 32 Files: Fixed -Wall -pedantic compiler warnings.
+
+2012-05-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/s_user.h: Added ALLOWMODES_SVSMODE and removed
+	MAGIC_SVSMODE_OVERRIDE
+
+	* ircd/m_svsmode.c: Added ALLOWMODES_SVSMODE and removed
+	MAGIC_SVSMODE_OVERRIDE
+
+	* ircd/s_user.c: Fix for compile warning on 64 bit systems in
+	relation to SVSMODE handling.
+
+2012-03-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/p10.txt: Added P10 documentation from
+	http://ircd.bircd.org/bewarep10.txt
+
+2012-01-25  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Fix for TOPIC setter perameter not being sent
+	at burst.
+
+2012-01-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Fixed a couple of typos (Thanks courpse)
+
+2012-01-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added SETHOST feature and FREEFORM privilege.
+
+	* doc/readme.features: Added SETHOST feature.
+
+	* include/handlers.h: Added SETHOST command.
+
+	* include/ircd_features.h: Added SETHOST feature.
+
+	* include/msg.h: Added SETHOST command.
+
+	* include/numeric.h: Added ERR_BADHOSTMASK and ERR_HOSTUNAVAIL
+	numeric replies.
+
+	* ircd/Makefile.in: Added SETHOST command.
+
+	* ircd/ircd_features.c: Added SETHOST feature.
+
+	* ircd/parse.c: Added SETHOST command.
+
+	* ircd/s_err.c: Added ERR_BADHOSTMASK and ERR_HOSTUNAVAIL
+	numeric replies.
+
+	* ircd/s_user.c: Changed cptr to sptr in register_user().
+
+	* ircd/m_sethost.c: Added SETHOST command.
+
+2012-01-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed send_umode() so it does not show +h or -h
+	to users.
+
+2012-01-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added freeform priv for SETHOST command.
+
+	* include/client.h: Added freeform priv for SETHOST command.
+
+	* ircd/client.c: Added freeform priv for SETHOST command.
+
+	* ircd/ircd_lexer.l: Added freeform priv for SETHOST command.
+
+	* ircd/ircd_parser.y: Added freeform priv for SETHOST command.
+
+2012-01-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Reverted previous commit due to bug caused by it.
+
+2012-01-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Prevented a user from seeing when he is given
+	internal user mode +h.
+
+2012-01-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Updated mode parsing to allow servers to send
+	MODE -h to allow for SETHOST UNDO.
+
+2012-01-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/s_conf.h: Added find_shost_conf().
+
+	* ircd/s_conf.c: Added find_shost_conf().
+
+	* ircd/s_user.c: Added automatic application of Spoofhost blocks
+	if autoapply is enabled.
+
+2012-01-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/s_conf.h: Modified SHostConf struct.
+
+	* ircd/ircd_parser.y: Modified SHostConf struct.
+
+	* ircd/s_err.c: Modified STATS s output.
+
+	* ircd/s_stats.c: Modified STATS s output.
+
+2012-01-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_features.h: Added HIS_STATS_s.
+
+	* doc/example.conf: Added Spoofhost block and HIS_STATS_s.
+
+	* doc/readme.features: Added HIS_STATS_s.
+
+	* include/s_conf.h: Added Spoofhost block.
+
+	* ircd/ircd_features.c: Added HIS_STATS_s.
+
+	* ircd/ircd_lexer.l: Added Spoofhost block.
+
+	* ircd/ircd_parser.y: Added Spoofhost block.
+
+	* ircd/s_conf.c: Added Spoofhost block.
+
+	* ircd/s_err.c: Corrected RPL_STATSSLINE and RPL_STATSSHUN.
+
+	* ircd/s_stats.c: Added STATS s for Spoofhost blocks.
+
+2012-01-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Replaced some ircd_snprintf() calls with more
+	appropriate ircd_strncpy() calls.
+
+2012-01-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added internal user mode +h for set host
+	propagation.
+
+	* include/struct.h: Added internal user mode +h for set host
+	propagation.
+
+	* ircd/s_user.c: Added internal user mode +h for set host
+	propagation.
+
+2012-01-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Moved user mode +r to be grouped with other
+	user modes with parameters.
+
+2012-01-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added HOST_IN_TOPIC to example.conf.
+
+2012-01-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Replaced HasFlag() with IsHiddenHost().
+
+2012-01-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/listener.c: Tweaked STATS P flags to only show 4 and 6
+	when appropriate.
+
+2012-01-03  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Rewrote PRIVS sending to prevent any buffer
+	overflows.
+
+	* ircd/client.c: Rewrote PRIVS sending to prevent any buffer
+	overflows.
+
+	* ircd/m_check.c: Rewrote PRIVS sending to prevent any buffer
+	overflows.
+
+	* ircd/m_oper.c: Rewrote PRIVS sending to prevent any buffer
+	overflows.
+
+	* ircd/s_serv.c: Rewrote PRIVS sending to prevent any buffer
+	overflows.
+
+2012-01-03  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/client.c: Rewrote client privilege listing in CHECK.
+
+2012-01-03  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.features: Added HOST_IN_TOPIC Feature.
+
+	* include/channel.h: Added HOST_IN_TOPIC Feature.
+
+	* include/ircd_features.h: Added HOST_IN_TOPIC Feature.
+
+	* ircd/ircd_features.c: Added HOST_IN_TOPIC Feature.
+
+	* ircd/m_topic.c: Added HOST_IN_TOPIC Feature.
+
+2012-01-03  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_names.c: Reverted previous commit.
+
+2011-12-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_names.c: Replaced CapActive() with HasCap().
+
+2011-12-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/capab.h: Added multi-prefix and userhost-in-names client
+	capabilities.
+
+	* ircd/m_cap.c: Added multi-prefix and userhost-in-names client
+	capabilities.
+
+	* ircd/m_names.c: Added multi-prefix and userhost-in-names client
+	capabilities.
+
+	* ircd/parse.c: Enabled CAP message for client capability negotiation.	
+
+2011-07-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_topic.c: Added support for server to server TOPIC
+	setter parameter.
+
+2011-06-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Fix for differences between cli_sock_ip and
+	cli_ip.
+
+2011-02-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/Makefile.in: Renamed include/geoip.h and ircd/geoip.c
+
+	* ircd/ircd_features.c: Renamed include/geoip.h and ircd/geoip.c
+
+	* ircd/m_mark.c: Renamed include/geoip.h and ircd/geoip.c
+
+	* ircd/m_webirc.c: Renamed include/geoip.h and ircd/geoip.c
+
+	* ircd/s_auth.c: Renamed include/geoip.h and ircd/geoip.c
+
+	* ircd/s_conf.c: Renamed include/geoip.h and ircd/geoip.c
+
+	* include/ircd_geoip.h: Renamed include/geoip.h and ircd/geoip.c
+
+	* ircd/ircd_geoip.c: Renamed include/geoip.h and ircd/geoip.c
+
+2011-01-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Added user mode +s parameter keyword 'all' to set
+	all server notice masks.
+
+2010-12-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fix for bug in umode_str() where mode string
+	without params was one character longer then it should be.
+
+2010-09-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_string.c: Fixed 2 memory leaks in itoa().
+
+2010-09-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Added some WEBIRC server notices for failed
+	attempts to SNO_UNAUTH.
+
+2010-09-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_mode.c: Added check to prevent channel mode changes from
+	users with user mode +k from being bounced as HACK(2).
+
+2010-09-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Moved con_privs to cli_privs in Client struct.
+
+	* ircd/channel.c: Fix for duplicate MODE messages on channel
+	creation.
+
+	* ircd/client.c: Moved con_privs to cli_privs in Client struct.
+
+	* ircd/m_privs.c: Moved con_privs to cli_privs in Client struct.
+
+	* ircd/m_server.c: Moved con_privs to cli_privs in Client struct.
+
+2010-09-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Fix for OPMODE mode changes being bounced by
+	remote servers.
+
+2010-09-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added APASS_CANSEND Feature.
+
+	* doc/readme.features: Added APASS_CANSEND Feature.
+
+	* include/ircd_features.h: Added APASS_CANSEND Feature.
+
+	* ircd/channel.c: Added APASS_CANSEND Feature.
+
+	* ircd/ircd_features.c: Added APASS_CANSEND Feature.
+
+2010-09-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added STRICTUSERNAME Feature.
+
+	* doc/readme.features: Added STRICTUSERNAME Feature.
+
+	* include/ircd_features.h: Added STRICTUSERNAME Feature.
+
+	* ircd/ircd_features.c: Added STRICTUSERNAME Feature.
+
+	* ircd/s_auth.c: Added STRICTUSERNAME Feature.
+
+2010-09-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Changed HasHiddenHost() to IsHiddenHost().
+
+	* ircd/m_who.c: Changed HasHiddenHost() to IsHiddenHost().
+
+	* ircd/send.c: Changed HasHiddenHost() to IsHiddenHost().
+
+	* ircd/whocmds.c: Changed HasHiddenHost() to IsHiddenHost().
+
+	* ircd/whowas.c: Changed HasHiddenHost() to IsHiddenHost().
+
+2010-09-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added LOC Features.
+
+	* doc/readme.features: Added LOC Features.
+
+	* include/client.h: Added con_loc field to Connection struct.
+
+	* include/ircd_defs.h: Added ACCPASSWDLEN default length for LOC
+	passwords.
+
+	* include/ircd_features.h: Added LOC Features.
+
+	* include/struct.h: Added LOCInfo struct.
+
+	* ircd/ircd_features.c: Added LOC Features.
+
+	* ircd/list.c: Added code to ensure con_loc is free'd.
+
+	* ircd/m_account.c: Added LOC ACCOUNT sub types C, H, A and D.
+
+	* ircd/m_pass.c: Added support for LOC.
+
+	* ircd/s_user.c: Added support for LOC.
+
+2010-09-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added EXTENDED_ACCOUNTS Feature.
+
+	* doc/readme.features: Added EXTENDED_ACCOUNTS Feature.
+
+	* include/client.h: Added ClearAccount() macro.
+
+	* include/ircd_features.h: Added EXTENDED_ACCOUNTS Feature.
+
+	* ircd/ircd_features.c: Added EXTENDED_ACCOUNTS Feature.
+
+	* ircd/m_account.c: Added support for extended ACCOUNT tokesn R,
+	M and U (Others are LOC specific and will be added with LOC).
+
+2010-09-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd_cloaking.c: Removed a space that was bothering me and was
+	completely unnecessary.
+
+2010-09-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed a bug where cloaked hosts and IPs were
+	not being propagated properly or displayed in CHECK properly.
+
+2010-09-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added NOIDENT Feature.
+
+	* doc/readme.features: Added NOIDENT Feature.
+
+	* include/ircd_features.h: Added NOIDENT Feature.
+
+	* ircd/ircd_features.c: Added NOIDENT Feature.
+
+	* ircd/s_auth.c: Added NOIDENT Feature.
+
+2010-09-02  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_misc.c: Changed server notice to show users real host.
+
+	* ircd/s_user.c: Changed server notice to show users real host.
+
+2010-09-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added HIS_GLINE_REASON Feature.
+
+	* doc/readme.features: Added HIS_GLINE_REASON Feature.
+
+	* include/ircd_features.h: Added HIS_GLINE_REASON Feature.
+
+	* ircd/gline.c: Added HIS_GLINE_REASON Feature.
+
+	* ircd/ircd_features.c: Added HIS_GLINE_REASON Feature.
+
+2010-08-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added HIS_SHUN_REASON Feature.
+
+	* doc/readme.features: Added HIS_SHUN_REASON Feature.
+
+	* include/ircd_features.h: Added HIS_SHUN_REASON Feature.
+
+	* include/msg.h: Changed shun handling to use MFLG_s.
+
+	* ircd/ircd_features.c: Added HIS_SHUN_REASON Feature.
+
+	* ircd/ircd_lexer.l: Fixed TPRIV_* typos.
+
+	* ircd/ircd_parser.y: Fixed TPRIV_* typos.
+
+	* ircd/m_nick.c: Forgot to add shun handling to m_nick.
+
+	* ircd/parse.c: Changed shun handling to use MFLG_s.
+
+	* ircd/s_user.c: Added "you are shunned" notice dependant on
+	HIS_SHUN_REASON.
+
+	* ircd/shun.c: Added "you are shunned" notice dependant on
+	HIS_SHUN_REASON.
+
+2010-08-31  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added SHUN Features.
+
+	* doc/readme.features: Added SHUN Features.
+
+	* include/client.h: Added SHUN PRIV_s.
+
+	* include/handlers.h: Added SHUN command.
+
+	* include/ircd_features.h: Added SHUN FEAT_s.
+
+	* include/msg.h: Added SHUN command.
+
+	* include/numeric.h: Added SHUN RPL_s and ERR_s.
+
+	* ircd/Makefile.in: Added SHUN command.
+
+	* ircd/client.c: Added SHUN PRIV_s.
+
+	* ircd/ircd_features.c: Added SHUN FEAT_s.
+
+	* ircd/ircd_lexer.l: Added SHUN PRIV_s.
+
+	* ircd/ircd_parser.y: Added SHUN PRIV_s.
+
+	* ircd/parse.c: Added SHUN command.
+
+	* ircd/s_debug.c: Added SHUN memory stats.
+
+	* ircd/s_err.c: Added SHUN RPL_s and ERR_s.
+
+	* ircd/s_serv.c: Added SHUN bursting.
+
+	* ircd/s_stats.c: Added STATS S for SHUNs.
+
+	* include/shun.h: Added SHUN functions and API.
+
+	* ircd/m_shun.c: Added SHUN command.
+
+	* ircd/shun.c: Added SHUN functions and API.
+
+2010-08-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/gline.c: Makes more sense to ensure the user has a CTCP
+	version before we check it's length rather then after.
+
+2010-08-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/gline.c: Fixed a minor bug where CTCP version G-lines
+	were not being limited by FEAT_GLINEMAXUSERCOUNT properly.
+
+2010-08-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/gline.h: Added support for $V G-lines to match against
+	CTCP versions.
+
+	* ircd/gline.c: Added support for $V G-lines to match against CTCP
+	versions.
+
+2010-08-29  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added Features for OPERMOTD and RULES.
+
+	* doc/readme.features: Added documentation for RULES Features.
+
+2010-08-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ChangeLong.nefarious: Fixed dates for todays commits.
+
+	* include/handlers.h: Added RULES command.
+
+	* include/ircd_features.h: Added RULES Features.
+
+	* include/motd.h: Updated MOTD functions to support RULES file.
+
+	* include/msg.h: Added RULES command.
+
+	* include/numeric.h: Added RULES numeric replies.
+
+	* ircd/Makefile.in: Added RULES command.
+
+	* ircd/ircd_features.c: Added RULES Features.
+
+	* ircd/m_opermotd.c: Updated MOTD functions to support RULES
+	file.
+
+	* ircd/motd.c: Updated MOTD functions to support RULES file.
+
+	* ircd/parse.c: Added RULES command.
+
+	* ircd/s_err.c: Added RULES numeric replies.
+
+	* doc/ircd.opermotd: Added sample oper MOTD file.
+
+	* doc/ircd.rules: Added sample RULES file.
+
+	* ircd/m_rules.c: Added RULES command.
+
+2010-08-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/motd.h: Updated and changed some motd functions.
+
+	* ircd/ircd_parser.y: Updated and changed some motd functions.
+
+	* ircd/m_opermotd.c: Updated and changed some motd functions.
+
+	* ircd/motd.c: Updated and changed some motd functions.
+
+2010-08-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/client.c: Removed code commented out in a previous commit.
+
+	* ircd/m_oper.c: Removed code commented out in a previous commit.
+
+2010-08-28  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.features: Added OPERMOTD Features.
+
+	* include/handlers.h: Added OPERMOTD command.
+
+	* include/ircd_features.h: Added OPERMOTD Features.
+
+	* include/motd.h: Added OPERMOTD functions.
+
+	* include/msg.h: Added OPERMOTD command.
+
+	* include/numeric.h: Added OPERMOTD RPL_s and ERR_s.
+
+	* ircd/Makefile.in: Added OPERMOTD command.
+
+	* ircd/ircd_features.c: Added OPERMOTD Features.
+
+	* ircd/m_oper.c: Added OPERMOTD at OPER.
+
+	* ircd/motd.c: Added OPERMOTD functions.
+
+	* ircd/parse.c: Added OPERMOTD command.
+
+	* ircd/s_err.c: Added OPERMOTD RPL_s and ERR_s.
+
+	* ircd/m_opermotd.c: Added OPERMOTD command.
+
+2010-08-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_defs.h: Changed VERSIONLEN to 250.
+
+2010-08-27  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added REMOTE priv used to allow remote OPER.
+
+	* include/client.h: Added REMOTE priv used to allow remote OPER.
+
+	* include/ircd_features.h: Added REMOTE_OPER Feature.
+
+	* ircd/client.c: Added REMOTE priv used to allow remote OPER.
+
+	* ircd/ircd_features.c: Added REMOTE_OPER Feature.
+
+	* ircd/ircd_lexer.l: Added REMOTE priv used to allow remote OPER.
+
+	* ircd/ircd_parser.y: Added REMOTE priv used to allow remote OPER.
+
+	* ircd/m_oper.c: Added remote OPER.
+
+	* ircd/s_user.c: Fixed bug where cli_handler()'s were being
+	changed when they shouldn't be.
+
+2010-08-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed bug where OPER_HOSTHIDING was not applying
+	when remotely opered and also fixed bug where cli_handler was not
+	changed to OPER_HANDLER when remotely opered.
+
+2010-08-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_string.h: Added functions needed for expiration
+	interval units.
+
+	* ircd/ircd_string.c: Added functions needed for expiration
+	interval units.
+
+	* ircd/m_gline.c: Added support for expiration interval units.
+
+	* ircd/m_jupe.c: Added support for expiration interval units.
+
+2010-08-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed setting user mode -x for host hiding style
+	2 and 3 to match Nefarious 1 behaviour. Also fixed bug where
+	unhide_hostmask() would not unhide a host for an unauthed user.
+
+2010-08-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Added check to prevent extra WEBIRC commands
+	from clients who have already successfully issued a WEBIRC command.
+
+2010-08-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added some missing spaces in Features block.
+
+2010-08-23  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added Kill block version field and CTCP
+	versioning Features.
+
+	* doc/readme.features: Added CTCP versioning Features.
+
+	* include/client.h: Added CTCP version field to Client struct.
+
+	* include/ircd_defs.h: Added CTCP version max length macro.
+
+	* include/ircd_features.h: Added CTCP versioning Features.
+
+	* include/mark.h: Added CVERSION mark.
+
+	* include/s_conf.h: Added Kill block version field.
+
+	* ircd/ircd_features.c: Added CTCP versioning Features.
+
+	* ircd/ircd_lexer.l: Added Kill block version field.
+
+	* ircd/ircd_parser.y: Added Kill block version field.
+
+	* ircd/m_check.c: Added CTCP version to CHECK output.
+
+	* ircd/m_mark.c: Added CVERSION mark.
+
+	* ircd/m_notice.c: Added CTCP versioning.
+
+	* ircd/s_conf.c: Added Kill block version field.
+
+	* ircd/s_err.c: Added Kill block version field to STATS k
+	output.
+
+	* ircd/s_serv.c: Added CVERSION mark.
+
+	* ircd/s_stats.c: Added Kill block version field to STATS k
+	output.
+
+	* ircd/s_user.c: Added CTCP versioning.
+
+2010-08-23  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_string.h: Added itoa().
+
+	* include/s_user.h: Added RPL_ISUPPORT functions for dynamic
+	RPL_ISUPPORT.
+
+	* ircd/ircd.c: Added call to init_isupport();
+
+	* ircd/ircd_features.c: Added Feature change handlers relating to
+	RPL_ISUPPORT.
+
+	* ircd/ircd_string.c: Added itoa().
+
+	* ircd/s_user.c: Added RPL_ISUPPORT functions for dynamic
+	RPL_ISUPPORT.
+
+2010-08-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added m_mkpasswd().
+
+	* include/ircd_crypt_smd5.h: Added extern for ircd_crypt_smd5().
+
+	* include/msg.h: Added MKPASSWD command.
+
+	* ircd/Makefile.in: Added m_mkpasswd.c.
+
+	* ircd/parse.c: Added MKPASSWD command.
+
+	* ircd/m_mkpasswd.c: Added MKPASSWD command.
+
+2010-08-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added PRIV_ADD and  PRIV_DEL definitions and
+	added client_modify_priv_by_name() and clear_privs() functions.
+
+	* ircd/client.c: Added PRIVS propagation and
+	client_modify_priv_by_name() and clear_privs() functions.
+
+	* ircd/m_privs.c: Added PRIVS propagation.
+
+	* ircd/s_serv.c: Added PRIVS propagation.
+
+	* ircd/s_user.c: Added PRIVS propagation.
+
+2010-08-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	Applied Forwards patch supplied by cnix <cnixnz@gmail.com>:
+
+	* doc/example.conf: Added Forwards block.
+
+	* include/s_conf.h: Added GlobalForwards array.
+
+	* include/send.h: Modified sendcmdto_channel_butone() params.
+
+	* ircd/ircd_lexer.l: Added Forwards block.
+
+	* ircd/ircd_parser.y: Added Forwards block.
+
+	* ircd/ircd_relay.c: Modified sendcmdto_channel_butone() params.
+
+	* ircd/m_wallchops.c: Modified sendcmdto_channel_butone() params.
+
+	* ircd/m_wallvoices.c: Modified sendcmdto_channel_butone() params.
+
+	* ircd/s_numeric.c: Modified sendcmdto_channel_butone() params.
+
+	* ircd/send.c: Modified sendcmdto_channel_butone() params.
+
+2010-08-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/GeoIP.c: Changed error messages to use Nefarious' logging
+	system instead of printing directly to stdout and stderr.
+
+2010-08-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added user mode +f for fake hosts.
+
+	* include/handlers.h: Added FAKE command.
+
+	* include/msg.h: Added FAKE command.
+
+	* include/struct.h: Added fakehost field to User struct.
+
+	* ircd/Makefile.in: Added FAKE command.
+
+	* ircd/m_swhois.c: Removed a few blank lines
+
+	* ircd/parse.c: Added FAKE command.
+
+	* ircd/s_user.c: Added fake host support.
+
+	* ircd/m_fake.c: Added FAKE command.
+
+2010-08-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/whocmds.c: Fix for WHO not showing correct cloaked IP or
+	hidden IP for field specifier i.
+
+2010-08-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Fix for CHECK not showing real host of a user
+	with user mode +x when the user is not authed.
+
+2010-08-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fix for bug where modes +C and +c were showing
+	in "MODE nick" output when they shouldnt be.
+
+2010-08-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Fix for minor bug where HIDDEN_OPERHOST was
+	always being used in ban checking if OPERHOST_HIDING is enabled
+	even if the user is not an oper.
+
+2010-08-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/channel.c: Updated channel ban matching to check cloaked
+	IP, cloaked host, account host, real host and current host.
+
+2010-08-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added HOST_HIDING_STYLE Feature and associated
+	options.
+
+	* doc/readme.features: Added HOST_HIDING_STYLE Feature and associated
+	options.
+
+	* include/client.h: Added user modes +C and +c for cloaked host and
+	IP propagation.
+
+	* include/ircd_features.h: Added HOST_HIDING_STYLE Feature and
+	associated options.
+
+	* include/s_user.h: Added Host and IP cloaking for styles 2 and 3.
+
+	* include/struct.h: Added cloakip and cloakhost fields.
+
+	* ircd/Makefile.in: Added ircd/ircd_cloaking.c
+
+	* ircd/ircd_features.c: Added HOST_HIDING_STYLE Feature and
+	associated options.
+
+	* ircd/m_account.c: Modified call to hide_hostmask().
+
+	* ircd/m_oper.c: Modified call to hide_hostmask().
+
+	* ircd/m_userhost.c: Modified to show apropriate hosts in accordance
+	with HOST_HIDING_STYLE.
+
+	* ircd/m_userip.c: Modified to show apropriate ips in accordance
+	with HOST_HIDING_STYLE.
+
+	* ircd/m_whois.c: Modified to show real host+ip without requiring
+	authed status.
+
+	* ircd/s_err.c: Modified RPL_HOSTHIDDEN to ommit " hidden" and allow
+	specifying " hidden" seperately.
+
+	* ircd/s_user.c: Added Host and IP cloaking for styles 2 and 3.
+
+	* include/ircd_cloaking.h: Added Host and IP cloaking for styles 2
+	and 3.
+
+	* ircd/ircd_cloaking.c: Added Host and IP cloaking for styles 2 and 3.
+
+2010-08-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_md5.c: Fixed typos in function calls.
+
+	* ircd/s_user.c: Fixed HOST_HIDING being ignored.
+
+2010-08-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_md5.h: Added DoMD5().
+
+	* ircd/ircd_md5.c: Added DoMD5().
+
+2010-08-15  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Forgot to add the Features OPERHOST_HIDING
+	and HIDDEN_OPERHOST.
+
+	* doc/readme.features: Forgot to add the Features OPERHOST_HIDING
+	and HIDDEN_OPERHOST.
+
+2010-08-14  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed bug where user modes were not propagating
+	during bursting properly.
+
+2010-08-14  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_features.h: Added OPERHOST_HIDING and HIDDEN_OPERHOST
+	Features.
+
+	* ircd/ircd_features.c: Added OPERHOST_HIDING and HIDDEN_OPERHOST
+	Features.
+
+	* ircd/m_oper.c: Added Oper host hiding.
+
+	* ircd/s_user.c: Added Oper host hiding and tweaked host hiding
+	logic.
+
+2010-08-14  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Fixed a typo for ALLOWRMX in the Features
+	block.
+
+	* doc/readme.features: Added HIDDEN_HOST_QUIT,
+	HIDDEN_HOST_SET_MESSAGE, HIDDEN_HOST_UNSET_MESSAGE and ALLOWRMX
+	to readme.features.
+
+2010-08-13  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added HIDDEN_HOST_QUIT, HIDDEN_HOST_SET_MESSAGE
+	and HIDDEN_HOST_UNSET_MESSAGE Features to example.conf.
+
+2010-08-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/s_user.h: Removed unnecessary parameter from hide_hostmask()
+
+	* ircd/m_account.c: Removed unnecessary parameter from hide_hostmask()
+
+	* ircd/s_user.c: Removed unnecessary parameter from hide_hostmask()
+
+2010-08-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/ircd_features.h: Added FEAT_s for custom +x QUIT
+	message, -x custom QUIT message, allowing -x and disabling QUIT
+	for host change.
+
+	* include/s_user.h: Added unhide_hostmasl() function.
+
+	* ircd/ircd_features.c: Added FEAT_s for custom +x QUIT message,
+	-x custom QUIT message, allowing -x and disabling QUIT for host
+	change.
+
+	* ircd/m_account.c: Modified user mode +x handling.
+
+	* ircd/s_user.c: Modified user mode +x handling.
+
+2010-08-10  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SWHOIS command.
+
+	* include/msg.h: Added SWHOIS command.
+
+	* include/numeric.h: Added RPL_WHOISSPECIAL reply.
+
+	* include/struct.h: Added SWHOIS field to User struct.
+
+	* ircd/Makefile.in: Added SWHOIS command.
+
+	* ircd/m_check.c: Added SWHOIS output.
+
+	* ircd/m_whois.c: Added RPL_WHOISSPECIAL reply.
+
+	* ircd/parse.c: Added SWHOIS command.
+
+	* ircd/s_err.c: Added RPL_WHOISSPECIAL reply.
+
+	* ircd/s_serv.c: Added SWHOIS propagation.
+
+	* ircd/m_swhois.c: Added SWHOIS command.
+
+2010-08-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added PRIV_SERVICE.
+
+	* ircd/client.c: Added PRIV_SERVICE.
+
+	* ircd/ircd_lexer.l: Added PRIV_SERVICE.
+
+	* ircd/ircd_parser.y: Added PRIV_SERVICE.
+
+	* ircd/s_user.c: Changed user mode +k requirement to PRIV_SERVICE.
+
+2010-08-01  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Changed user mode handling so setting user mode
+	-o sets user mode -w if F:WALLOPS_OPER_ONLY is TRUE.
+
+2010-07-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Forgot to update infousermodes with +X.
+
+2010-07-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added xtraop priv to allow setting user mode
+	+X.
+
+	* doc/readme.features: Added F:OPER_XTRAOP.
+
+	* include/client.h: Added user mode +X and xtraop priv.
+
+	* include/ircd_features.h: Added F:OPER_XTRAOP.
+
+	* include/s_user.h: Fixed set_nick_name() to allow SVSNICK to
+	override nick change restrictions.
+
+	* ircd/channel.c: Allow +X user to speak when dissallowed and to
+	kick +k users if not ulined.
+
+	* ircd/client.c: Added xtraop priv to allow setting user mode +X.
+
+	* ircd/ircd_features.c: Added F:OPER_XTRAOP.
+
+	* ircd/ircd_lexer.l: Added xtraop priv to allow setting user mode
+	+X.
+
+	* ircd/ircd_parser.y: Added xtraop priv to allow setting user mode
+	+X.
+
+	* ircd/m_join.c: Allow +X user to join past any join restrictions.
+
+	* ircd/m_kick.c: Allow +X user to kick +k user if not ulined.
+
+	* ircd/m_kill.c: Allow +X user to kill +k user if not ulined.
+
+	* ircd/m_nick.c: Fixed set_nick_name() to allow SVSNICK to override
+	nick change restrictions.
+
+	* ircd/s_err.c: Changed ERR_ISCHANSERVICE to allow custom client
+	type.
+
+	* ircd/s_user.c: Added user mode +X and xtraop priv.
+
+2010-07-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed crash when setting user mode -o while +H
+	is set.
+
+2010-07-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added admin priv for user mode +a.
+
+	* include/client.h: Added admin priv and user mode +a.
+
+	* include/ircd_features.h: Added F:WHOIS_ADMIN.
+
+	* ircd/client.c: Added admin priv for user mode +a.
+
+	* ircd/ircd_features.c: Added F:WHOIS_ADMIN.
+
+	* ircd/ircd_parser.y: Added admin priv for user mode +a.
+
+	* ircd/m_check.c: Added F:WHOIS_ADMIN.
+
+	* ircd/m_oper.c: Added user mode +a if the oper has the admin
+	priv.
+
+	* ircd/m_whois.c: Added F:WHOIS_ADMIN.
+
+	* ircd/s_user.c: Added admin priv and user mode +a.
+
+2010-07-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added F:TARGET_LIMITING.
+
+	* doc/readme.features: Added F:TARGET_LIMITING.
+
+	* include/ircd_features.h: Added F:TARGET_LIMITING.
+
+	* ircd/ircd_features.c: Added F:TARGET_LIMITING.
+
+	* ircd/s_user.c: Added F:TARGET_LIMITING.
+
+2010-07-30  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added country and continent fields to Client
+	block.
+
+	* include/s_conf.h: Added country and continent fields to Client
+	block.
+
+	* ircd/ircd_parser.y: Added country and continent fields to Client
+	block.
+
+	* ircd/s_auth.c: Moved geoip_apply() (again) to make sure it is
+	called before a Client block is chosen.
+
+	* ircd/s_conf.c: Added country and continent fields to Client
+	block.
+
+2010-07-26  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added country and continent fields to Kill
+	block.
+
+	* include/client.h: Added a missing */ from some comments.
+
+	* include/s_conf.h: Added country and continent fields to Kill
+	block.
+
+	* ircd/ircd_parser.y: Added country and continent fields to Kill
+	block.
+
+	* ircd/m_webirc.c: Moved geoip_apply() back here.
+
+	* ircd/s_auth.c: Moved geoip_apply() back here to make sure it's
+	done before find_kill().
+
+	* ircd/s_conf.c: Updated find_kill() to check continent code and
+	country code.
+
+	* ircd/s_err.c: Updated STATS k to include country and continent
+	codes.
+
+	* ircd/s_stats.c: Updated STATS k to include country and continent
+	codes.
+
+	* ircd/s_user.c: Removed geoip_apply() from here.
+
+2010-07-24  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/api/motd.txt: Added isgeoip param to motd_add().
+
+	* doc/example.conf: Added country and continent fields to motd
+	block.
+
+	* include/motd.h: Added MOTD_COUNTRY and MOTD_CONTINENT types and
+	isgeoip param to motd_add().
+
+	* ircd/ircd_lexer.l: Added country and continent fields to motd
+	block.
+
+	* ircd/ircd_parser.y: Added country and continent fields to motd
+	block.
+
+	* ircd/motd.c: Added MOTD_COUNTRY and MOTD_CONTINENT types and
+	isgeoip param to motd_add() and motd_create().
+
+2010-07-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Oops minor typo in variable name.
+
+2010-07-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Removed GeoIP apply as it is no longer needed
+	here.
+
+	* ircd/s_auth.c: Removed GeoIP apply as it is no longer needed
+	here.
+
+	* ircd/s_user.c: Moved geoip_apply() to register_user() to take
+	into account IAuth and WEBIRC.
+
+2010-07-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Added GeoIP support to WEBIRC to make sure
+	GeoIP data is correct after WEBIRC message.
+
+2010-07-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/geoip.h: Added geoip_apply_mark().
+
+	* include/mark.h: Added MARK_GEOIP.
+
+	* ircd/geoip.c: Added geoip_apply_mark().
+
+	* ircd/m_mark.c: Added MARK_GEOIP.
+
+	* ircd/s_serv.c: Added MARK_GEOIP.
+
+	* ircd/s_user.c: Added MARK_GEOIP.
+
+2010-07-22  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/geoip.c: Changed geoip_apply() to set country and continent
+	to "--" and "Unknown" on error.
+
+2010-07-19  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Changed CHECK to only show GeoIP data if GeoIP
+	support is enabled.
+
+2010-07-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added GeoIP Feature options.
+
+	* doc/readme.features: Added base GeoIP support.
+
+	* include/client.h: Added base GeoIP support.
+
+	* include/ircd_features.h: Added base GeoIP support.
+
+	* ircd/Makefile.in: Added base GeoIP support.
+
+	* ircd/ircd.c: Added base GeoIP support.
+
+	* ircd/ircd_features.c: Added base GeoIP support.
+
+	* ircd/m_check.c: Added base GeoIP support.
+
+	* ircd/s_auth.c: Added base GeoIP support.
+
+	* ircd/s_conf.c: Added base GeoIP support.
+
+	* include/GeoIP.h: Added base GeoIP support.
+
+	* include/geoip.h: Added base GeoIP support.
+
+	* ircd/GeoIP.c: Added base GeoIP support.
+
+	* ircd/GeoIP.dat: Added base GeoIP support.
+
+	* ircd/GeoIPv6.dat: Added base GeoIP support.
+
+	* ircd/geoip.c: Added base GeoIP support.
+
+2010-07-11  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added maxchans Class block option.
+
+	* include/class.h: Added maxchans Class block option.
+
+	* ircd/channel.c: Added maxchans Class block option.
+
+	* ircd/class.c: Added maxchans Class block option.
+
+	* ircd/ircd_lexer.l: Added maxchans Class block option.
+
+	* ircd/ircd_parser.y: Added maxchans Class block option.
+
+	* ircd/m_join.c: Added maxchans Class block option.
+
+2010-06-11  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Fix to stop class from showing in check when
+	a server is responding for a user on another server.
+
+2010-06-10  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Few tweaks to channels list in CHECK <nick>
+	output.
+
+2010-06-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Tweaked CHECK to show zombies in channel user
+	lists and changed symbol used for delayed joins.
+
+2010-06-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Updated CHECK to only display op level if
+	OPLEVELS feature is enabled.
+
+2010-06-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Added op level for users to CHECK <channel>
+	output.
+
+	* ircd/s_err.c: Added op level for users to CHECK <channel>
+	output.
+
+2010-06-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Added indicator to members list in CHECK to
+	show users who's join is delayed and added count of join delayed
+	users.
+
+2010-03-21  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added WHOIS_OPER and WHOIS_SERVICE features.
+
+	* include/ircd_features.h: Added WHOIS_OPER and WHOIS_SERVICE
+	features.
+
+	* include/numeric.h: Added RPL_WHOISSERVICE.
+
+	* ircd/ircd_features.c: Added WHOIS_OPER and WHOIS_SERVICE features.
+
+	* ircd/m_whois.c: Added RPL_WHOISSERVICE and changed RPL_WHOISOPER.
+
+	* ircd/s_err.c: Added RPL_WHOISSERVICE and changed RPL_WHOISOPER.
+
+2010-03-20  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_oper.c: Changed OPER to automatically set Class block
+	usermode on the user as well as oper modes.
+
+2010-03-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added recvq class option.
+
+	* include/class.h: Added recvq class optio8n.
+
+	* include/client.h: Added recvq class option.
+
+	* ircd/class.c: Added recvq class option.
+
+	* ircd/ircd_lexer.l: Added recvq class option.
+
+	* ircd/ircd_parser.y: Added recvq class option.
+
+	* ircd/m_check.c: Added recvq class option.
+
+	* ircd/m_oper.c: Added recvq class option.
+
+	* ircd/s_bsd.c: Added recvq class option.
+
+	* ircd/s_err.c: Added recvq class option.
+
+2010-03-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added user mode +B (mark user as a bot).
+
+	* include/numeric.h: Added user mode +B (mark user as a bot).
+
+	* ircd/m_whois.c: Added user mode +B (mark user as a bot).
+
+	* ircd/s_err.c: Added user mode +B (mark user as a bot).
+
+	* ircd/s_user.c: Added user mode +B (mark user as a bot).
+
+2010-03-18  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Forgot to add q to infousermodes.
+
+2010-03-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/channel.h: Added common_chan_count() function.
+
+	* include/client.h: Added user mode +q (PMs from users on common
+	channels only).
+
+	* include/numeric.h: Added user mode +q (PMs from users on common
+	channels only).
+
+	* ircd/channel.c: Added common_chan_count() function.
+
+	* ircd/ircd_relay.c: Added user mode +q (PMs from users on common
+	channels only).
+
+	* ircd/m_invite.c: Added user mode +q (PMs from users on common
+	channels only).
+
+	* ircd/s_err.c: Added user mode +q (PMs from users on common
+	channels only).
+
+	* ircd/s_user.c: Added user mode +q (PMs from users on common
+	channels only).
+
+2010-03-17  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added user mode +D (deaf to PM).
+
+	* include/numeric.h: Added user mode +D (deaf to PM).
+
+	* ircd/ircd_relay.c: Added user mode +D (deaf to PM).
+
+	* ircd/m_invite.c: Added user mode +D (deaf to PM).
+
+	* ircd/m_whois.c: Added user mode +D (deaf to PM).
+
+	* ircd/s_err.c: Added user mode +D (deaf to PM).
+
+	* ircd/s_user.c: Added user mode +D (deaf to PM).
+
+2010-03-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added user mode +R (account only PM).
+
+	* include/numeric.h: Added user mode +R (account only PM).
+
+	* ircd/ircd_relay.c: Added user mode +R (account only PM).
+
+	* ircd/m_invite.c: Added user mode +R (account only PM).
+
+	* ircd/m_whois.c: Added user mode +R (account only PM).
+
+	* ircd/s_err.c: Added user mode +R (account only PM).
+
+	* ircd/s_user.c: Added user mode +R (account only PM).
+
+2010-03-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SVSJOIN command.
+
+	* include/msg.h: Added SVSJOIN command.
+
+	* ircd/Makefile.in: Added SVSJOIN command.
+
+	* ircd/parse.c: Added SVSJOIN command.
+
+	* ircd/m_svsjoin.c: Added SVSJOIN command.
+
+2010-03-16  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SVSPART command.
+
+	* include/msg.h: Added SVSPART command.
+
+	* ircd/Makefile.in: Added SVSPART command.
+
+	* ircd/parse.c: Added SVSPART command.
+
+	* ircd/m_svspart.c: Added SVSPART command.
+
+2010-03-14  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SVSNICK command.
+
+	* include/msg.h: Added SVSNICK command.
+
+	* include/s_user.h: Added extern for do_nick_name().
+
+	* ircd/Makefile.in: Added SVSNICK command.
+
+	* ircd/m_nick.c: Changed definition of do_nick_name().
+
+	* ircd/parse.c: Added SVSNICK command.
+
+	* ircd/m_svsnick.c: Added SVSNICK command.
+
+2010-03-14  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SVSMODE command.
+
+	* include/msg.h: Added SVSMODE command.
+
+	* include/s_user.h: Modified set_user_mode() to work with SVSMODE.
+
+	* ircd/Makefile.in: Added SVSMODE command.
+
+	* ircd/parse.c: Added SVSMODE command.
+
+	* ircd/s_user.c: Added MAGIC_SVSMODE_OVERRIDE for set_user_mode().
+
+	* ircd/m_svsmode.c: Added SVSMODE command.
+
+2010-03-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SVSNOOP command.
+
+	* include/msg.h: Added SVSNOOP command.
+
+	* ircd/Makefile.in: Added SVSNOOP command.
+
+	* ircd/parse.c: Added SVSNOOP command.
+
+	* ircd/s_serv.c: Added missing #include for mark.h
+
+	* ircd/m_svsnoop.c: Added SVSNOOP command.
+
+2010-03-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_serv.c: Propagate MARK WEBIRC at burst.
+
+2010-03-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added WebIRC block description field.
+
+	* include/client.h: Added MARK WEBIRC.
+
+	* include/handlers.h: Added MARK command.
+
+	* include/msg.h: Added MARK command.
+
+	* include/numeric.h: Added MARK WEBIRC to WHOIS.
+
+	* include/s_conf.h: Added WebIRC block description field.
+
+	* ircd/Makefile.in: Added MARK command.
+
+	* ircd/ircd_parser.y: Added WebIRC block description field.
+
+	* ircd/m_check.c: Added MARK WEBIRC to CHECK.
+
+	* ircd/m_webirc.c: Added MARK WEBIRC.
+
+	* ircd/m_whois.c: Added MARK WEBIRC to WHOIS.
+
+	* ircd/parse.c: Added MARK command.
+
+	* ircd/s_conf.c: Added WebIRC block description field.
+
+	* ircd/s_err.c: Added MARK WEBIRC to WHOIS.
+
+	* ircd/s_stats.c: Added WebIRC block description field.
+
+	* ircd/s_user.c: Added MARK WEBIRC.
+
+	* include/mark.h: Added MARK command.
+
+	* ircd/m_mark.c: Added MARK command.
+
+2010-03-12  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_conf.c: Fix for memory leak on rehash.
+
+2010-03-11  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added WebIRC block options userident and
+	ignoreident.
+
+	* include/client.h: Added Client flag to indicate not to add a
+	~ to USER user name used as ident.
+
+	* include/s_conf.h: Added WebIRC block flags.
+
+	* ircd/ircd_lexer.l: Added WebIRC block options userident and
+	ignoreident.
+
+	* ircd/ircd_parser.y: Added WebIRC block options userident and
+	ignoreident.
+
+	* ircd/m_webirc.c: Added WebIRC block options userident and
+	ignoreident.
+
+	* ircd/s_conf.c: Added support for WebIRC block userident option.
+
+	* ircd/s_err.c: Added WebIRC block options to STATS W as flags.
+
+	* ircd/s_stats.c: Added WebIRC block options to STATS W as flags.
+
+2010-03-11  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_webirc.c: Minor change to code order.
+
+2010-03-11  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added WebIRC block ident field.
+
+	* include/s_conf.h: Added WebIRC block ident field.
+
+	* ircd/ircd_lexer.l: Added WebIRC block ident field.
+
+	* ircd/ircd_parser.y: Added WebIRC block ident field.
+
+	* ircd/m_webirc.c: Added WebIRC block ident field.
+
+	* ircd/s_err.c: Added WebIRC block ident field to STATS W.
+
+	* ircd/s_stats.c: Added WebIRC block ident field to STATS W.
+
+2010-03-11  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/channel.h: Added channel mode 'd' to the list of channel
+	modes.
+
+	* include/client.h: Added user mode 'O' to the list of user modes.
+
+2010-03-10  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added FLAG_WEBIRC to indicate if a client is
+	a WEBIRC client and added fields to Client struct to store the
+	WEBIRC host's real host and IP.
+
+	* ircd/m_check.c: Added WEBIRC host and IP to CHECK output.
+
+	* ircd/m_webirc.c: Changed to save WEBIRC host's real host and
+	IP to additional fields in Client struct and mark the client as
+	a WEBIRC client.
+
+2010-03-10  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Aded WebIRC block and configuration.
+
+	* doc/readme.features: Added HIS_STATS_W feature.
+
+	* include/handlers.h: Added WEBIRC command.
+
+	* include/ircd_features.h: Added HIS_STATS_W feature.
+
+	* include/msg.h: Added WEBIRC command.
+
+	* include/numeric.h: Added RPL_STATSWLINE for STATS W.
+
+	* include/s_conf.h: Aded WebIRC block and configuration.
+
+	* ircd/Makefile.in: Added WEBIRC command/
+
+	* ircd/ircd_features.c: Added HIS_STATS_W feature.
+
+	* ircd/ircd_lexer.l: Aded WebIRC block and configuration.
+
+	* ircd/ircd_parser.y: Aded WebIRC block and configuration.
+
+	* ircd/parse.c: Added WEBIRC command.
+
+	* ircd/s_conf.c: Aded WebIRC block and configuration.
+
+	* ircd/s_err.c: Added RPL_STATSWLINE for STATS W.
+
+	* ircd/s_stats.c: Added STATS W to show WebIRC configuration.
+
+	* ircd/m_webirc.c: Added WEBIRC command.
+
+2010-03-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_user.c: Fixed no such channel error on connect due to
+	error in set_user_mode().
+
+2010-03-09  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SMO command.
+
+	* include/msg.h: Added SMO command.
+
+	* include/send.h: Added sendto_mode_butone().
+
+	* ircd/Makefile.in: Added SMO command.
+
+	* ircd/parse.c: Added SMO command.
+
+	* ircd/send.c: Added sendto_mode_butone().
+
+	* ircd/m_smo.c: Added SMO command.
+
+2010-03-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/snomask.html: Updated snomask documentation regarding
+	SNO_NICKCHG.
+
+2010-03-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Adjusted SNO_*s to re-add SNO_NICKCHG.
+
+	* include/handlers.h: Added SNO command.
+
+	* include/msg.h: Added SNO command.
+
+	* include/send.h: Added sendto_opmask_butone_global() to send
+	server notices to all servers and opers who elected to receive the
+	specified notice.
+
+	* ircd/Makefile.in: Added SNO command.
+
+	* ircd/gline.c: Changed sendto_opmask_butone() to
+	sendto_opmask_butone_global().
+
+	* ircd/m_oper.c: Changed sendto_opmask_butone() to
+	sendto_opmask_butone_global().
+
+	* ircd/parse.c: Added SNO command.
+
+	* ircd/s_misc.c: Changed sendto_opmask_butone() to
+	sendto_opmask_butone_global().
+
+	* ircd/s_user.c: Changed sendto_opmask_butone() to
+	sendto_opmask_butone_global().
+
+	* ircd/send.c: Added sendto_opmask_butone_global() to send server
+	notices to all servers and opers who elected to receive the
+	specified notice.
+
+	* ircd/m_sno.c: Added SNO command.
+
+2010-03-08  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/handlers.h: Added SVSIDENT, SVSINFO and SVSQUIT
+	commands.
+
+	* include/msg.h: Added SVSIDENT, SVSINFO and SVSQUIT commands.
+
+	* ircd/Makefile.in: Added SVSIDENT, SVSINFO and SVSQUIT commands.
+
+	* ircd/parse.c: Added SVSIDENT, SVSINFO and SVSQUIT commands.
+
+	* ircd/m_svsident.c: Added SVSIDENT command.
+
+	* ircd/m_svsinfo.c: Added SVSINFO command.
+
+	* ircd/m_svsquit.c: Added SVSQUIT command.
+
+2010-03-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_mode.c: Changed handling to allow services to set modes
+	on remote users.
+
+	* ircd/s_user.c: Changed handling to allow services to set modes
+	on remote users.
+
+2010-03-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added DIEPASS and RESTARTPASS features.
+
+	* doc/readme.features: Added DIEPASS and RESTARTPASS features.
+
+	* include/ircd_features.h: Added DIEPASS and RESTARTPASS features.
+
+	* ircd/ircd_features.c: Added DIEPASS and RESTARTPASS features.
+
+	* ircd/m_die.c: Added DIEPASS feature.
+
+	* ircd/m_restart.c: Added RESTARTPASS feature.
+
+2010-03-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added UHNAMES feature.
+
+	* doc/readme.features: Added UHNAMES feature.
+
+	* include/client.h: Added UHNAMES and NAMESX.
+
+	* include/handlers.h: Added PROTOCTL command.
+
+	* include/ircd_features.h: Added UHNAMES feature.
+
+	* include/msg.h: Added PROTOCTL command.
+
+	* include/supported.h: Added UHNAMES and NAMESX.
+
+	* ircd/Makefile.in: Added PROTOCTL command.
+
+	* ircd/ircd_features.c: Added UHNAMES feature.
+
+	* ircd/m_names.c: Added UHNAMES and NAMESX support.
+
+	* ircd/parse.c: Added PROTOCTL command.
+
+	* ircd/m_protoctl.c: Added PROTOCTL command.
+
+2010-03-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added auto channel modes on join.
+
+
+	* doc/readme.features: Added auto channel modes on join.
+
+	* include/channel.h: Added auto channel modes on join.
+
+	* include/ircd_features.h: Added auto channel modes on join.
+
+	* ircd/channel.c: Added auto channel modes on join.
+
+	* ircd/ircd_features.c: Added auto channel modes on join.
+
+2010-03-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added user modes +n and +I.
+
+	* ircd/client.c: Added user modes +n and +I.
+
+	* ircd/ircd_lexer.l: Added privs for user modes +n and +I.
+
+	* ircd/ircd_parser.y: Added privs for user modes +n and +I.
+
+	* ircd/m_whois.c: Added user modes +n and +I.
+
+	* ircd/s_user.c: Added user modes +n and +I.
+
+2010-03-07  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added OPER_HIDE Feature for user mode +H.
+
+	* doc/readme.features: Added OPER_HIDE Feature for user mode +H.
+
+	* include/ircd_features.h: Added OPER_HIDE Feature for user mode +H.
+
+	* ircd/ircd_features.c: Added OPER_HIDE Feature for user mode +H.
+
+	* ircd/m_whois.c: Moved WHOIS notice code.
+
+	* ircd/s_user.c: Added OPER_HIDE Feature for user mode +H.
+
+2010-03-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Forgot to add modes +H and +W to mode list.
+
+2010-03-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added HIDE_OPER priv.
+
+	* include/client.h: Added user mode +H and HIDE_OPER priv.
+
+	* ircd/client.c: Added user mode +H and HIDE_OPER priv.
+
+	* ircd/ircd_lexer.l: Added HIDE_OPER priv.
+
+	* ircd/ircd_parser.y: Added HIDE_OPER priv.
+
+	* ircd/m_oper.c: Added user mode +H.
+
+	* ircd/s_misc.c: Added user mode +H.
+
+	* ircd/s_user.c: Added user mode +H.
+
+2010-03-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added CHECK features OPER_WHOIS_PARANOIA.
+
+	* doc/readme.features: Added missing features documentation.
+
+	* include/ircd_features.h: Added FEAT_OPER_WHOIS_PARANOIA.
+
+	* ircd/ircd_features.c: Added FEAT_OPER_WHOIS_PARANOIA.
+
+	* ircd/s_user.c: Added FEAT_OPER_WHOIS_PARANOIA.
+
+2010-03-06  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/example.conf: Added PRIV_WHOIS_NOTICE.
+
+	* include/client.h: Added user mode +W (whois notice).
+
+	* ircd/client.c: Added user mode +W (whois notice).
+
+	* ircd/ircd_lexer.l: Added PRIV_WHOIS_NOTICE.
+
+	* ircd/ircd_parser.y: Added PRIV_WHOIS_NOTICE.
+
+	* ircd/m_whois.c: Added user mode +W (whois notice).
+
+	* ircd/s_user.c: Added user mode +W (whois notice).
+
+
+2010-03-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/res.h: Corrected a typo in irc_in_addr_type_cmp().
+
+	* ircd/gline.c: Updated gline code to ensure IPv6 CIDR masks do
+	not match any IPv4 IP addresses (eg 0::/16 would normally match
+	::ffff:192.168.1.2)
+
+	* ircd/m_check.c: Corrected a typo in irc_in_addr_type_cmp().
+
+2010-03-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/match.h: Added ipmask_clean() to clean CIDR mask addresses.
+
+	* include/res.h: Added irc_in_addr_type_cmp() macro to compare IP
+	address types.
+
+	* ircd/m_check.c: Updated code to only match IPv6 CIDR masks
+	against IPv6 and vice versa and re-added data sent/received lines to
+	checkClient()
+
+	* ircd/match.c: Added ipmask_clean() to clean CIDR mask addresses.
+
+2010-03-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_check.c: Removed buggy test to make sure CIDR searching
+	with CHECK didn't match IPv4 IPs with and IPv6 mask.
+
+2010-03-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/destruct_event.h: Moved struct DestructEvent definition.
+
+	* ircd/destruct_event.c: Moved struct DestructEvent definition.
+
+	* ircd/m_check.c: Added channel destruction time to CHECK output
+	for empty channels with a destruction time.
+
+2010-03-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* doc/readme.features: Re-added FEAT_ZANNELS.
+
+	* include/ircd_features.h: Re-added FEAT_ZANNELS.
+
+	* ircd/channel.c: Seperated delayed channel destruction from
+	FEAT_OPLEVELS and used FEAT_ZANNELS instead as the documentation
+	originally described.
+
+	* ircd/ircd_features.c: Re-added FEAT_ZANNELS.
+
+2010-03-05  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* include/client.h: Added cli_port and PRIV_CHECK.
+
+	* include/handlers.h: Added CHECK command.
+
+	* include/ircd_features.h: Added CHECK FEAT_s.
+
+	* include/msg.h: Added CHECK command.
+
+	* include/numeric.h: Added CHECK replies.
+
+	* ircd/Makefile.in: Added CHECK command.
+
+	* ircd/channel.c: Added support to channel_modes() to show +A and
+	+U passwords to opers.
+
+	* ircd/client.c: Added CHECK privs and features.
+
+	* ircd/ircd_features.c: Added CHECK FEAT_s.
+
+	* ircd/ircd_lexer.l: Added PRIV_CHECK.
+
+	* ircd/ircd_parser.y: Added PRIV_CHECK.
+
+	* ircd/parse.c: Added CHECK command.
+
+	* ircd/s_bsd.c: Added cli_port() to store remote port.
+
+	* ircd/s_err.c: Added CHECK replies.
+
+	* include/check.h: Added CHECK command.
+
+	* ircd/m_check.c: Added CHECK command.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* Makefile.in: Minor change to delete a folder I missed earlier.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_mode.c: Added fix to allow UWorld clients to send mode
+	changes.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/s_bsd.c: Added SERVER "o" flag to announce oplevels
+	support.
+
+	* ircd/m_burst.c: Only send oplevels and modes AU to servers
+	that support oplevels
+
+	* ircd/m_server.c: Added SERVER "o" flag to announce oplevels
+	support.
+
+	* ircd/s_serv.c: Added SERVER "o" flag to announce oplevels
+	support.
+
+	* ircd/channel.c: Change mode string generation to only include
+	oplevels and modes AU for servers that support oplevels.
+
+	* ircd/ircd_features.c: Set F:OPLEVELS default to FALSE.
+
+	* ircd/s_stats.c: Added flag "O" to STATS v/V output.
+
+	* include/channel.h: Added oplevels param to modebuf_extract().
+
+	* include/client.h: Added SERVER "o" flag to announce oplevels
+	support.
+
+	* doc/readme.features: Set F:OPLEVELS default to FALSE.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/ircd_features.c: Updated F:Line default values.
+
+	* doc/readme.features: Updated F:Line default values.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/convert-conf.c: Removed ZANNELS F:Line.
+
+	* ircd/ircd_features.c: Removed ZANNELS F:Line.
+
+	* include/ircd_features.h: Removed ZANNELS F:Line.
+
+	* doc/readme.features: Removed ZANNELS F:Line.
+
+2010-03-04  Matthew Beecging  <jobe@mdbnet.co.uk>
+
+	* ircd/version.c.SH: Updated to use /.release for 1revision id
+	if it exists otherwise use hg tip.
+
+	* ircd/m_isnef.c: Forgot to add this to the repo before.
+
+	* release.sh: Added script to generate /.release tag.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* ircd/m_isnef.c: Added ISNEF command.
+
+	* ircd/parse.c: Added m_isnef() handler for ISNEF.
+
+	* ircd/Makefile.in: Added m_isnef.c.
+
+	* include/handlers.h: Added m_isnef() handler for ISNEF.
+
+	* include/msg.h: Added m_isnef() handler for ISNEF.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+	* Makefile.in: Added include/patchlist.h.
+
+	* include/version.h: Added cvs_version.
+
+	* ircd/Makefile.in: Added version.c to "make clean".
+
+	* ircd/ircd.c: Added cvs_version to -v output.
+
+	* ircd/m_version.c: Added cvs_version to RPL_VERSION.
+
+	* ircd/s_err.c: Added "+[%s]" to RPL_VERSION.
+
+	* ircd/version.c.SH: Added cvs_version to version.c.
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+        * include/icd_defs.h: Updated values to match Nefarious 1.*
+
+        * ChangeLog.nefarious: Added (oops)
+
+2010-03-04  Matthew Beeching  <jobe@mdbnet.co.uk>
+
+        * include/patchlevel.h: Added Nefarious tag to version.
+
+***********************************************************************/
+
