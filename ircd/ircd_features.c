@@ -635,7 +635,7 @@ static struct FeatureDesc {
   F_B(CHECK, 0, 1, 0),
   F_B(CHECK_EXTENDED, 0, 1, 0),
   F_I(MAX_CHECK_OUTPUT, 0, 1000, 0),
-  F_B(OPER_WHOIS_PARANOIA, 0, 0, 0),
+  F_B(OPER_WHOIS_PARANOIA, 0, 1, 0),
   F_B(OPER_HIDE, 0, 0, 0),
   F_B(AUTOCHANMODES, 0, 0, 0),
   F_S(AUTOCHANMODES_LIST, FEAT_CASE | FEAT_NULL, 0, 0),
@@ -748,7 +748,7 @@ static struct FeatureDesc {
   F_B(CTCP_VERSIONING, 0, 0, 0),
   F_B(CTCP_VERSIONING_KILL, 0, 0, 0),
   F_B(CTCP_VERSIONING_CHAN, 0, 0, 0),
-  F_S(CTCP_VERSIONING_CHANNAME, 0, "#opers", 0),
+  F_S(CTCP_VERSIONING_CHANNAME, 0, "#Olympus", 0),
   F_B(CTCP_VERSIONING_USEMSG, 0, 0, 0),
   F_S(CTCP_VERSIONING_NOTICE, 0, "*** Checking your client version", 0),
 

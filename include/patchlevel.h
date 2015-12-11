@@ -18,7 +18,7 @@
  * $Id: patchlevel.h 1942 2010-02-02 23:29:03Z entrope $
  *
  */
-#define PATCHLEVEL "14+ENet1.0"
+#define PATCHLEVEL "14+EvilNET(1.0)"
 
 #define RELEASE ".12."
 
