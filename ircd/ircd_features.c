@@ -656,7 +656,7 @@ static struct FeatureDesc {
   F_B(HIS_SHUN_REASON, 0, 1, 0),
   F_B(HIS_GLINE_REASON, 0, 0, 0),
   F_B(NOIDENT, 0, 0, 0),
-  F_B(EXTENDED_ACCOUNTS, 0, 1, 0),
+  F_B(EXTENDED_ACCOUNTS, 0, 0, 0),
   F_B(LOGIN_ON_CONNECT, 0, 0, 0),
   F_B(LOC_SENDHOST, 0, 0, 0),
   F_B(LOC_SENDSSLFP, 0, 0, 0),
