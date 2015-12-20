@@ -624,7 +624,7 @@ static struct FeatureDesc {
   F_B(HIS_NETSPLIT, 0, 1, 0),
   F_S(HIS_SERVERNAME, 0, "*.evilnet.org", feature_notify_servername),
   F_S(HIS_SERVERINFO, 0, "EvilNET IRC Network", feature_notify_serverinfo),
-  F_S(HIS_URLSERVERS, 0, "http://www.evilnet.org/", 0),
+  F_S(HIS_URLSERVERS, 0, "http://www.evilnet.org/servers/", 0),
 
   /* Misc. random stuff */
   F_S(NETWORK, 0, "EvilNET", set_isupport_network),
