@@ -11,3 +11,6 @@ cd enet-1.0
 ./configure --libdir=$HOME/ircd --mandir=$HOME/ircd --bindir=$HOME/ircd
 
 make; make install
+
+
+Thanks to Nefarious Team For The Code
