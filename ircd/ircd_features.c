@@ -650,7 +650,7 @@ static struct FeatureDesc {
   F_B(OPER_XTRAOP, 0, 0, 0),
   F_B(REMOTE_OPER, 0, 1, 0),
   F_B(OPERMOTD, 0, 0, 0),
-  F_B(RULES, 0, 0, 0),
+  F_B(RULES, 0, 1, 0),
   F_B(DISABLE_SHUNS, 0, 0, 0),
   F_I(SHUNMAXUSERCOUNT, 0, 20, 0),
   F_B(HIS_SHUN_REASON, 0, 1, 0),
