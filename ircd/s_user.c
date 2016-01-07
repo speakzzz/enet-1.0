@@ -770,6 +770,8 @@ int set_nick_name(struct Client* cptr, struct Client* sptr,
        * however, allow to do two nick changes immediately after another
        * before limiting the nick flood. -Run
        */
+    if (!svsnick) 
+    {
       if (CurrentTime < cli_nextnick(cptr))
       {
         cli_nextnick(cptr) += 2;
@@ -787,6 +789,7 @@ int set_nick_name(struct Client* cptr, struct Client* sptr,
         if (cli_nextnick(cptr) < CurrentTime)
           cli_nextnick(cptr) = CurrentTime;
       }
+    }
       /* Invalidate all bans against the user so we check them again */
       for (member = (cli_user(cptr))->channel; member;
 	   member = member->next_channel) {
