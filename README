@@ -4,10 +4,12 @@ git openssl libssl-dev autoconf automake flex libpcre3-dev byacc gawk
 
 ##To install 
 
+1. Download the Files
 git clone https://github.com/speakzzz/enet-1.0.git
 
 cd enet-1.0
 
+2. Ready for the Configuration we suggest this command
 ./configure --libdir=$HOME/ircd --mandir=$HOME/ircd --bindir=$HOME/ircd
 
 make; make install
