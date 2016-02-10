@@ -736,7 +736,7 @@ static struct FeatureDesc {
   F_B(ALLOWRMX, 0, 0, 0),
   F_B(OPERHOST_HIDING, 0, 1, 0),
   F_S(HIDDEN_OPERHOST, FEAT_CASE, "staff.evilnet.org", 0),
-  F_I(HOST_HIDING_STYLE, 0, 1, 0),
+  F_I(HOST_HIDING_STYLE, 0, 3, 0),
   F_S(HOST_HIDING_PREFIX, 0, "EvilNET", 0),
   F_S(HOST_HIDING_KEY1, 0, "aoAr1HnR6gl3sJ7hVz4Zb7x4YwpW", 0),
   F_S(HOST_HIDING_KEY2, 0, "sdfjkLJKHlkjdkfjsdklfjlkjKLJ", 0),
