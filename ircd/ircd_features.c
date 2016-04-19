@@ -629,7 +629,7 @@ static struct FeatureDesc {
   /* Misc. random stuff */
   F_S(NETWORK, 0, "EvilNET", set_isupport_network),
   F_S(URL_CLIENTS, 0, "http://www.ircreviews.org/clients/", 0),
-  F_S(URLREG, 0, "https://github.com/speakzzz", 0),
+  F_S(URLREG, 0, "http://services.evilnet.org/live/", 0),
 
   /* Nefarious FEAT_'s */
   F_B(CHECK, 0, 1, 0),
