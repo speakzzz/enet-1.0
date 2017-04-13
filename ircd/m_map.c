@@ -174,7 +174,7 @@ int m_map(struct Client* cptr, struct Client* sptr, int parc, char* parv[])
   if (feature_bool(FEAT_HIS_MAP) && !IsAnOper(sptr))
   {
     sendcmdto_one(&me, CMD_NOTICE, sptr, "%C :%s %s", sptr,
-                  "/MAP has been disabled; Visit ", 
+                  "/MAP has been disabled. "
 			feature_str(FEAT_HIS_URLSERVERS));
     return 0;
   }
