@@ -175,7 +175,7 @@ int m_map(struct Client* cptr, struct Client* sptr, int parc, char* parv[])
   {
     sendcmdto_one(&me, CMD_NOTICE, sptr, "%C :%s %s", sptr,
                   "/MAP has been disabled. "
-			feature_str(FEAT_HIS_URLSERVERS));
+		  "Visit ", feature_str(FEAT_HIS_URLSERVERS));
     return 0;
   }
   if (parc < 2)
