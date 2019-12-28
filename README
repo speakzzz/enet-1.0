@@ -1,6 +1,16 @@
 ##To install you must make sure you have the following packages:
 
-git openssl libssl-dev autoconf automake flex libpcre3-dev byacc gawk
+git libgeoip-dev openssl libssl-dev autoconf automake flex libpcre3-dev byacc gawk
+
+ALSO MAKE SURE YOU INSTALL libmaxminddb by doing the following as a root:
+
+1) wget https://github.com/maxmind/libmaxminddb/releases/download/1.4.2/libmaxminddb-1.4.2.tar.gz
+2) tar -zxvf libmaxminddb-1.4.2.tar.gz
+3) cd libmaxminddb-1.4.2
+4) ./configure
+5) make; make check
+6) make install
+7) ldconfig
 
 ##To install 
 
@@ -12,6 +22,8 @@ cd enet-1.0
 
 2. Ready for the Configuration we suggest this command
 ./configure --libdir=$HOME/ircd --mandir=$HOME/ircd --bindir=$HOME/ircd
+
+*** in ubuntu to configure with Geoip support do: ./configure --libdir=$HOME/ircd --mandir=$HOME/ircd --bindir=$HOME/ircd --with-geoip-includes=/usr/include
 
 make; make install
 
